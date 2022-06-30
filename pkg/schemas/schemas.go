@@ -7,7 +7,7 @@ type FileInfo struct {
 	SourceURI string // The GCS URI of the file.
 }
 
-// unfortunately we end up with the duplication of fields in models (instead of embedding structs) due to bugs with gorm handling embedded structs
+// Schema is the shared representation of a Schema between registry and client(Speakeasy SDK).
 type Schema struct {
 	FileInfo
 	ID          uint
