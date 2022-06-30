@@ -10,7 +10,7 @@ type FileInfo struct {
 // unfortunately we end up with the duplication of fields in models (instead of embedding structs) due to bugs with gorm handling embedded structs
 type Schema struct {
 	FileInfo
-	ID          uint   `gorm:"primarykey"`
+	ID          uint
 	ApiID       string `json:"api_id"`
 	VersionID   string `json:"version_id"`
 	RevisionID  string `json:"revision_id"`
