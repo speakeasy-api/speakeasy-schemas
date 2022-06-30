@@ -2,7 +2,6 @@ package apis
 
 // Api is the shared representation of an API between registry and client(Speakeasy SDK).
 type Api struct {
-	ID          uint
 	WorkspaceID string `json: "workspace_id"`          // Uniquely identifies the workspace this Api belongs to.
 	Method      string `json: "method"`                // HTTP verb.
 	Path        string `json: "path"`                  // Path that handles this Api.
