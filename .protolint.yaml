@@ -1,0 +1,30 @@
+lint:
+  rules:
+    no_default: true
+
+    add:
+      - FIELD_NAMES_LOWER_SNAKE_CASE
+      - MESSAGE_NAMES_UPPER_CAMEL_CASE
+      - INDENT
+      - SERVICE_NAMES_END_WITH
+      - FILE_NAMES_LOWER_SNAKE_CASE
+      - IMPORTS_SORTED
+      - PACKAGE_NAME_LOWER_CASE
+      - ORDER
+      - MESSAGES_HAVE_COMMENT
+      - SERVICES_HAVE_COMMENT
+      - RPCS_HAVE_COMMENT
+      - FIELDS_HAVE_COMMENT
+      - PROTO3_FIELDS_AVOID_REQUIRED
+      - PROTO3_GROUPS_AVOID
+      - REPEATED_FIELD_NAMES_PLURALIZED
+      - ENUMS_HAVE_COMMENT
+      - ENUM_FIELDS_HAVE_COMMENT
+      - SYNTAX_CONSISTENT
+      - RPC_NAMES_CASE
+      - QUOTE_CONSISTENT
+  rules_option:
+    indent:
+      style: 4
+    service_names_end_with:
+      text: Service

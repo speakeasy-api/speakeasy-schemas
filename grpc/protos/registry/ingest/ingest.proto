@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ingest;
+
+option go_package = "github.com/speakeasy-api/speakeasy-schemas/grpc/go/registry/ingest";
+option java_package = "dev.speakeasyapi.schemas";
+
+// IngestService is the service definition for the registry ingest endpoint.
+service IngestService {
+    //  Ingest is the rpc handling ingest from the SDK
+    rpc Ingest(IngestRequest) returns (IngestResponse) {}
+}
+
+// IngestRequest is the request message for the ingest rpc.
+message IngestRequest {
+    // har is string containing a HTTP Archive 1.2 formatted file contents
+    string har = 1;
+}
+
+// IngestResponse is the response message for the ingest rpc.
+message IngestResponse {
+}
