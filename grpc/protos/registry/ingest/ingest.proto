@@ -15,6 +15,8 @@ service IngestService {
 message IngestRequest {
     // har is string containing a HTTP Archive 1.2 formatted file contents
     string har = 1;
+    // path_hint is a hint to the ingest service about the structure of the request path
+    string path_hint = 2;
 }
 
 // IngestResponse is the response message for the ingest rpc.
