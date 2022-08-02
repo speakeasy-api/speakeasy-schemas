@@ -17,6 +17,10 @@ message IngestRequest {
     string har = 1;
     // path_hint is a hint to the ingest service about the structure of the request path
     string path_hint = 2;
+    // api_id is used to associate requests with a particular Api in the Speakeasy platform
+    string api_id = 3;
+    // version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+    string version_id = 4;
 }
 
 // IngestResponse is the response message for the ingest rpc.
