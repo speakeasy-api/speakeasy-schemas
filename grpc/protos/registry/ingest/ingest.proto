@@ -21,6 +21,8 @@ message IngestRequest {
     string api_id = 3;
     // version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
     string version_id = 4;
+    // customer_id is the id of the customer who is making the request
+    string customer_id = 5;
 }
 
 // IngestResponse is the response message for the ingest rpc.

@@ -97,6 +97,26 @@ public final class Ingest {
      */
     com.google.protobuf.ByteString
         getVersionIdBytes();
+
+    /**
+     * <pre>
+     * customer_id is the id of the customer who is making the request
+     * </pre>
+     *
+     * <code>string customer_id = 5;</code>
+     * @return The customerId.
+     */
+    java.lang.String getCustomerId();
+    /**
+     * <pre>
+     * customer_id is the id of the customer who is making the request
+     * </pre>
+     *
+     * <code>string customer_id = 5;</code>
+     * @return The bytes for customerId.
+     */
+    com.google.protobuf.ByteString
+        getCustomerIdBytes();
   }
   /**
    * <pre>
@@ -119,6 +139,7 @@ public final class Ingest {
       pathHint_ = "";
       apiId_ = "";
       versionId_ = "";
+      customerId_ = "";
     }
 
     @java.lang.Override
@@ -173,6 +194,12 @@ public final class Ingest {
               java.lang.String s = input.readStringRequireUtf8();
 
               versionId_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              customerId_ = s;
               break;
             }
             default: {
@@ -393,6 +420,52 @@ public final class Ingest {
       }
     }
 
+    public static final int CUSTOMER_ID_FIELD_NUMBER = 5;
+    private volatile java.lang.Object customerId_;
+    /**
+     * <pre>
+     * customer_id is the id of the customer who is making the request
+     * </pre>
+     *
+     * <code>string customer_id = 5;</code>
+     * @return The customerId.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerId() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * customer_id is the id of the customer who is making the request
+     * </pre>
+     *
+     * <code>string customer_id = 5;</code>
+     * @return The bytes for customerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomerIdBytes() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -419,6 +492,9 @@ public final class Ingest {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, versionId_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, customerId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -439,6 +515,9 @@ public final class Ingest {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(versionId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, versionId_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, customerId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -463,6 +542,8 @@ public final class Ingest {
           .equals(other.getApiId())) return false;
       if (!getVersionId()
           .equals(other.getVersionId())) return false;
+      if (!getCustomerId()
+          .equals(other.getCustomerId())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -482,6 +563,8 @@ public final class Ingest {
       hash = (53 * hash) + getApiId().hashCode();
       hash = (37 * hash) + VERSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getVersionId().hashCode();
+      hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomerId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -627,6 +710,8 @@ public final class Ingest {
 
         versionId_ = "";
 
+        customerId_ = "";
+
         return this;
       }
 
@@ -657,6 +742,7 @@ public final class Ingest {
         result.pathHint_ = pathHint_;
         result.apiId_ = apiId_;
         result.versionId_ = versionId_;
+        result.customerId_ = customerId_;
         onBuilt();
         return result;
       }
@@ -719,6 +805,10 @@ public final class Ingest {
         }
         if (!other.getVersionId().isEmpty()) {
           versionId_ = other.versionId_;
+          onChanged();
+        }
+        if (!other.getCustomerId().isEmpty()) {
+          customerId_ = other.customerId_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1130,6 +1220,102 @@ public final class Ingest {
   checkByteStringIsUtf8(value);
         
         versionId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object customerId_ = "";
+      /**
+       * <pre>
+       * customer_id is the id of the customer who is making the request
+       * </pre>
+       *
+       * <code>string customer_id = 5;</code>
+       * @return The customerId.
+       */
+      public java.lang.String getCustomerId() {
+        java.lang.Object ref = customerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * customer_id is the id of the customer who is making the request
+       * </pre>
+       *
+       * <code>string customer_id = 5;</code>
+       * @return The bytes for customerId.
+       */
+      public com.google.protobuf.ByteString
+          getCustomerIdBytes() {
+        java.lang.Object ref = customerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * customer_id is the id of the customer who is making the request
+       * </pre>
+       *
+       * <code>string customer_id = 5;</code>
+       * @param value The customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * customer_id is the id of the customer who is making the request
+       * </pre>
+       *
+       * <code>string customer_id = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerId() {
+        
+        customerId_ = getDefaultInstance().getCustomerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * customer_id is the id of the customer who is making the request
+       * </pre>
+       *
+       * <code>string customer_id = 5;</code>
+       * @param value The bytes for customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        customerId_ = value;
         onChanged();
         return this;
       }
@@ -1633,15 +1819,15 @@ public final class Ingest {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034registry/ingest/ingest.proto\022\006ingest\"S" +
+      "\n\034registry/ingest/ingest.proto\022\006ingest\"h" +
       "\n\rIngestRequest\022\013\n\003har\030\001 \001(\t\022\021\n\tpath_hin" +
       "t\030\002 \001(\t\022\016\n\006api_id\030\003 \001(\t\022\022\n\nversion_id\030\004 " +
-      "\001(\t\"\020\n\016IngestResponse2J\n\rIngestService\0229" +
-      "\n\006Ingest\022\025.ingest.IngestRequest\032\026.ingest" +
-      ".IngestResponse\"\000B^\n\030dev.speakeasyapi.sc" +
-      "hemasZBgithub.com/speakeasy-api/speakeas" +
-      "y-schemas/grpc/go/registry/ingestb\006proto" +
-      "3"
+      "\001(\t\022\023\n\013customer_id\030\005 \001(\t\"\020\n\016IngestRespon" +
+      "se2J\n\rIngestService\0229\n\006Ingest\022\025.ingest.I" +
+      "ngestRequest\032\026.ingest.IngestResponse\"\000B^" +
+      "\n\030dev.speakeasyapi.schemasZBgithub.com/s" +
+      "peakeasy-api/speakeasy-schemas/grpc/go/r" +
+      "egistry/ingestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1652,7 +1838,7 @@ public final class Ingest {
     internal_static_ingest_IngestRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ingest_IngestRequest_descriptor,
-        new java.lang.String[] { "Har", "PathHint", "ApiId", "VersionId", });
+        new java.lang.String[] { "Har", "PathHint", "ApiId", "VersionId", "CustomerId", });
     internal_static_ingest_IngestResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ingest_IngestResponse_fieldAccessorTable = new
