@@ -7,22 +7,46 @@ option java_package = "dev.speakeasyapi.schemas";
 
 // IngestService is the service definition for the registry ingest endpoint.
 service IngestService {
-    //  Ingest is the rpc handling ingest from the SDK
+    //  Ingest is the rpc handling ingest from the SDK.
     rpc Ingest(IngestRequest) returns (IngestResponse) {}
 }
 
 // IngestRequest is the request message for the ingest rpc.
 message IngestRequest {
-    // har is string containing a HTTP Archive 1.2 formatted file contents
+    // MaskingMetadata contains information about any masking added to the har.
+    message MaskingMetadata {
+        // request_header_masks contains a map of header keys to the masks applied to them.
+        map<string, string> request_header_masks = 1;
+        // request_cookie_masks contains a map of cookie keys to the masks applied to them.
+        map<string, string> request_cookie_masks = 2;
+        // request_field_masks_string contains a map of string body fields to the masks applied to them.
+        map<string, string> request_field_masks_string = 3;
+        // request_field_masks_number contains a map of number body fields to the masks applied to them.
+        map<string, string> request_field_masks_number = 4;
+        // response_header_masks contains a map of header keys to the masks applied to them.
+        map<string, string> response_header_masks = 5;
+        // response_cookie_masks contains a map of cookie keys to the masks applied to them.
+        map<string, string> response_cookie_masks = 6;
+        // response_field_masks_string contains a map of string body fields to the masks applied to them.
+        map<string, string> response_field_masks_string = 7;
+        // response_field_masks_number contains a map of number body fields to the masks applied to them.
+        map<string, string> response_field_masks_number = 8;
+        // query_string_masks contains a map of query string keys to the masks applied to them.
+        map<string, string> query_string_masks = 9;
+    }
+
+    // har is string containing a HTTP Archive 1.2 formatted file contents.
     string har = 1;
-    // path_hint is a hint to the ingest service about the structure of the request path
+    // path_hint is a hint to the ingest service about the structure of the request path.
     string path_hint = 2;
-    // api_id is used to associate requests with a particular Api in the Speakeasy platform
+    // api_id is used to associate requests with a particular Api in the Speakeasy platform.
     string api_id = 3;
-    // version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+    // version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
     string version_id = 4;
-    // customer_id is the id of the customer who is making the request
+    // customer_id is the id of the customer who is making the request.
     string customer_id = 5;
+    // masking_metadata contains information about any masking added to the har.
+    MaskingMetadata masking_metadata = 6;
 }
 
 // IngestResponse is the response message for the ingest rpc.

@@ -102,7 +102,7 @@ public final class IngestServiceGrpc {
 
     /**
      * <pre>
-     *  Ingest is the rpc handling ingest from the SDK
+     *  Ingest is the rpc handling ingest from the SDK.
      * </pre>
      */
     public void ingest(dev.speakeasyapi.schemas.Ingest.IngestRequest request,
@@ -142,7 +142,7 @@ public final class IngestServiceGrpc {
 
     /**
      * <pre>
-     *  Ingest is the rpc handling ingest from the SDK
+     *  Ingest is the rpc handling ingest from the SDK.
      * </pre>
      */
     public void ingest(dev.speakeasyapi.schemas.Ingest.IngestRequest request,
@@ -171,7 +171,7 @@ public final class IngestServiceGrpc {
 
     /**
      * <pre>
-     *  Ingest is the rpc handling ingest from the SDK
+     *  Ingest is the rpc handling ingest from the SDK.
      * </pre>
      */
     public dev.speakeasyapi.schemas.Ingest.IngestResponse ingest(dev.speakeasyapi.schemas.Ingest.IngestRequest request) {
@@ -199,7 +199,7 @@ public final class IngestServiceGrpc {
 
     /**
      * <pre>
-     *  Ingest is the rpc handling ingest from the SDK
+     *  Ingest is the rpc handling ingest from the SDK.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<dev.speakeasyapi.schemas.Ingest.IngestResponse> ingest(

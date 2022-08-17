@@ -20,7 +20,7 @@ public final class Ingest {
 
     /**
      * <pre>
-     * har is string containing a HTTP Archive 1.2 formatted file contents
+     * har is string containing a HTTP Archive 1.2 formatted file contents.
      * </pre>
      *
      * <code>string har = 1;</code>
@@ -29,7 +29,7 @@ public final class Ingest {
     java.lang.String getHar();
     /**
      * <pre>
-     * har is string containing a HTTP Archive 1.2 formatted file contents
+     * har is string containing a HTTP Archive 1.2 formatted file contents.
      * </pre>
      *
      * <code>string har = 1;</code>
@@ -40,7 +40,7 @@ public final class Ingest {
 
     /**
      * <pre>
-     * path_hint is a hint to the ingest service about the structure of the request path
+     * path_hint is a hint to the ingest service about the structure of the request path.
      * </pre>
      *
      * <code>string path_hint = 2;</code>
@@ -49,7 +49,7 @@ public final class Ingest {
     java.lang.String getPathHint();
     /**
      * <pre>
-     * path_hint is a hint to the ingest service about the structure of the request path
+     * path_hint is a hint to the ingest service about the structure of the request path.
      * </pre>
      *
      * <code>string path_hint = 2;</code>
@@ -60,7 +60,7 @@ public final class Ingest {
 
     /**
      * <pre>
-     * api_id is used to associate requests with a particular Api in the Speakeasy platform
+     * api_id is used to associate requests with a particular Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string api_id = 3;</code>
@@ -69,7 +69,7 @@ public final class Ingest {
     java.lang.String getApiId();
     /**
      * <pre>
-     * api_id is used to associate requests with a particular Api in the Speakeasy platform
+     * api_id is used to associate requests with a particular Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string api_id = 3;</code>
@@ -80,7 +80,7 @@ public final class Ingest {
 
     /**
      * <pre>
-     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string version_id = 4;</code>
@@ -89,7 +89,7 @@ public final class Ingest {
     java.lang.String getVersionId();
     /**
      * <pre>
-     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string version_id = 4;</code>
@@ -100,7 +100,7 @@ public final class Ingest {
 
     /**
      * <pre>
-     * customer_id is the id of the customer who is making the request
+     * customer_id is the id of the customer who is making the request.
      * </pre>
      *
      * <code>string customer_id = 5;</code>
@@ -109,7 +109,7 @@ public final class Ingest {
     java.lang.String getCustomerId();
     /**
      * <pre>
-     * customer_id is the id of the customer who is making the request
+     * customer_id is the id of the customer who is making the request.
      * </pre>
      *
      * <code>string customer_id = 5;</code>
@@ -117,6 +117,33 @@ public final class Ingest {
      */
     com.google.protobuf.ByteString
         getCustomerIdBytes();
+
+    /**
+     * <pre>
+     * masking_metadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+     * @return Whether the maskingMetadata field is set.
+     */
+    boolean hasMaskingMetadata();
+    /**
+     * <pre>
+     * masking_metadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+     * @return The maskingMetadata.
+     */
+    dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata getMaskingMetadata();
+    /**
+     * <pre>
+     * masking_metadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+     */
+    dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder getMaskingMetadataOrBuilder();
   }
   /**
    * <pre>
@@ -202,6 +229,19 @@ public final class Ingest {
               customerId_ = s;
               break;
             }
+            case 50: {
+              dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder subBuilder = null;
+              if (maskingMetadata_ != null) {
+                subBuilder = maskingMetadata_.toBuilder();
+              }
+              maskingMetadata_ = input.readMessage(dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maskingMetadata_);
+                maskingMetadata_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -236,11 +276,3692 @@ public final class Ingest {
               dev.speakeasyapi.schemas.Ingest.IngestRequest.class, dev.speakeasyapi.schemas.Ingest.IngestRequest.Builder.class);
     }
 
+    public interface MaskingMetadataOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:ingest.IngestRequest.MaskingMetadata)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+      int getRequestHeaderMasksCount();
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+      boolean containsRequestHeaderMasks(
+          java.lang.String key);
+      /**
+       * Use {@link #getRequestHeaderMasksMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestHeaderMasks();
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestHeaderMasksMap();
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+
+      /* nullable */
+java.lang.String getRequestHeaderMasksOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+
+      java.lang.String getRequestHeaderMasksOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+      int getRequestCookieMasksCount();
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+      boolean containsRequestCookieMasks(
+          java.lang.String key);
+      /**
+       * Use {@link #getRequestCookieMasksMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestCookieMasks();
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestCookieMasksMap();
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+
+      /* nullable */
+java.lang.String getRequestCookieMasksOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+
+      java.lang.String getRequestCookieMasksOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+      int getRequestFieldMasksStringCount();
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+      boolean containsRequestFieldMasksString(
+          java.lang.String key);
+      /**
+       * Use {@link #getRequestFieldMasksStringMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestFieldMasksString();
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestFieldMasksStringMap();
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+
+      /* nullable */
+java.lang.String getRequestFieldMasksStringOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+
+      java.lang.String getRequestFieldMasksStringOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+      int getRequestFieldMasksNumberCount();
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+      boolean containsRequestFieldMasksNumber(
+          java.lang.String key);
+      /**
+       * Use {@link #getRequestFieldMasksNumberMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestFieldMasksNumber();
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getRequestFieldMasksNumberMap();
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+
+      /* nullable */
+java.lang.String getRequestFieldMasksNumberOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+
+      java.lang.String getRequestFieldMasksNumberOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+      int getResponseHeaderMasksCount();
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+      boolean containsResponseHeaderMasks(
+          java.lang.String key);
+      /**
+       * Use {@link #getResponseHeaderMasksMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseHeaderMasks();
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseHeaderMasksMap();
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+
+      /* nullable */
+java.lang.String getResponseHeaderMasksOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+
+      java.lang.String getResponseHeaderMasksOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+      int getResponseCookieMasksCount();
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+      boolean containsResponseCookieMasks(
+          java.lang.String key);
+      /**
+       * Use {@link #getResponseCookieMasksMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseCookieMasks();
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseCookieMasksMap();
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+
+      /* nullable */
+java.lang.String getResponseCookieMasksOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+
+      java.lang.String getResponseCookieMasksOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+      int getResponseFieldMasksStringCount();
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+      boolean containsResponseFieldMasksString(
+          java.lang.String key);
+      /**
+       * Use {@link #getResponseFieldMasksStringMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseFieldMasksString();
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseFieldMasksStringMap();
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+
+      /* nullable */
+java.lang.String getResponseFieldMasksStringOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+
+      java.lang.String getResponseFieldMasksStringOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+      int getResponseFieldMasksNumberCount();
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+      boolean containsResponseFieldMasksNumber(
+          java.lang.String key);
+      /**
+       * Use {@link #getResponseFieldMasksNumberMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseFieldMasksNumber();
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getResponseFieldMasksNumberMap();
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+
+      /* nullable */
+java.lang.String getResponseFieldMasksNumberOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+
+      java.lang.String getResponseFieldMasksNumberOrThrow(
+          java.lang.String key);
+
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+      int getQueryStringMasksCount();
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+      boolean containsQueryStringMasks(
+          java.lang.String key);
+      /**
+       * Use {@link #getQueryStringMasksMap()} instead.
+       */
+      @java.lang.Deprecated
+      java.util.Map<java.lang.String, java.lang.String>
+      getQueryStringMasks();
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+      java.util.Map<java.lang.String, java.lang.String>
+      getQueryStringMasksMap();
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+
+      /* nullable */
+java.lang.String getQueryStringMasksOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue);
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+
+      java.lang.String getQueryStringMasksOrThrow(
+          java.lang.String key);
+    }
+    /**
+     * <pre>
+     * MaskingMetadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * Protobuf type {@code ingest.IngestRequest.MaskingMetadata}
+     */
+    public static final class MaskingMetadata extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:ingest.IngestRequest.MaskingMetadata)
+        MaskingMetadataOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use MaskingMetadata.newBuilder() to construct.
+      private MaskingMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private MaskingMetadata() {
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new MaskingMetadata();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private MaskingMetadata(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  requestHeaderMasks_ = com.google.protobuf.MapField.newMapField(
+                      RequestHeaderMasksDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000001;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                requestHeaderMasks__ = input.readMessage(
+                    RequestHeaderMasksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                requestHeaderMasks_.getMutableMap().put(
+                    requestHeaderMasks__.getKey(), requestHeaderMasks__.getValue());
+                break;
+              }
+              case 18: {
+                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  requestCookieMasks_ = com.google.protobuf.MapField.newMapField(
+                      RequestCookieMasksDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                requestCookieMasks__ = input.readMessage(
+                    RequestCookieMasksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                requestCookieMasks_.getMutableMap().put(
+                    requestCookieMasks__.getKey(), requestCookieMasks__.getValue());
+                break;
+              }
+              case 26: {
+                if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                  requestFieldMasksString_ = com.google.protobuf.MapField.newMapField(
+                      RequestFieldMasksStringDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                requestFieldMasksString__ = input.readMessage(
+                    RequestFieldMasksStringDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                requestFieldMasksString_.getMutableMap().put(
+                    requestFieldMasksString__.getKey(), requestFieldMasksString__.getValue());
+                break;
+              }
+              case 34: {
+                if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                  requestFieldMasksNumber_ = com.google.protobuf.MapField.newMapField(
+                      RequestFieldMasksNumberDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                requestFieldMasksNumber__ = input.readMessage(
+                    RequestFieldMasksNumberDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                requestFieldMasksNumber_.getMutableMap().put(
+                    requestFieldMasksNumber__.getKey(), requestFieldMasksNumber__.getValue());
+                break;
+              }
+              case 42: {
+                if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                  responseHeaderMasks_ = com.google.protobuf.MapField.newMapField(
+                      ResponseHeaderMasksDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                responseHeaderMasks__ = input.readMessage(
+                    ResponseHeaderMasksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                responseHeaderMasks_.getMutableMap().put(
+                    responseHeaderMasks__.getKey(), responseHeaderMasks__.getValue());
+                break;
+              }
+              case 50: {
+                if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                  responseCookieMasks_ = com.google.protobuf.MapField.newMapField(
+                      ResponseCookieMasksDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000020;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                responseCookieMasks__ = input.readMessage(
+                    ResponseCookieMasksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                responseCookieMasks_.getMutableMap().put(
+                    responseCookieMasks__.getKey(), responseCookieMasks__.getValue());
+                break;
+              }
+              case 58: {
+                if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                  responseFieldMasksString_ = com.google.protobuf.MapField.newMapField(
+                      ResponseFieldMasksStringDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000040;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                responseFieldMasksString__ = input.readMessage(
+                    ResponseFieldMasksStringDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                responseFieldMasksString_.getMutableMap().put(
+                    responseFieldMasksString__.getKey(), responseFieldMasksString__.getValue());
+                break;
+              }
+              case 66: {
+                if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                  responseFieldMasksNumber_ = com.google.protobuf.MapField.newMapField(
+                      ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000080;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                responseFieldMasksNumber__ = input.readMessage(
+                    ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                responseFieldMasksNumber_.getMutableMap().put(
+                    responseFieldMasksNumber__.getKey(), responseFieldMasksNumber__.getValue());
+                break;
+              }
+              case 74: {
+                if (!((mutable_bitField0_ & 0x00000100) != 0)) {
+                  queryStringMasks_ = com.google.protobuf.MapField.newMapField(
+                      QueryStringMasksDefaultEntryHolder.defaultEntry);
+                  mutable_bitField0_ |= 0x00000100;
+                }
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                queryStringMasks__ = input.readMessage(
+                    QueryStringMasksDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                queryStringMasks_.getMutableMap().put(
+                    queryStringMasks__.getKey(), queryStringMasks__.getValue());
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      @java.lang.Override
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetRequestHeaderMasks();
+          case 2:
+            return internalGetRequestCookieMasks();
+          case 3:
+            return internalGetRequestFieldMasksString();
+          case 4:
+            return internalGetRequestFieldMasksNumber();
+          case 5:
+            return internalGetResponseHeaderMasks();
+          case 6:
+            return internalGetResponseCookieMasks();
+          case 7:
+            return internalGetResponseFieldMasksString();
+          case 8:
+            return internalGetResponseFieldMasksNumber();
+          case 9:
+            return internalGetQueryStringMasks();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.class, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder.class);
+      }
+
+      public static final int REQUEST_HEADER_MASKS_FIELD_NUMBER = 1;
+      private static final class RequestHeaderMasksDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_RequestHeaderMasksEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> requestHeaderMasks_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRequestHeaderMasks() {
+        if (requestHeaderMasks_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RequestHeaderMasksDefaultEntryHolder.defaultEntry);
+        }
+        return requestHeaderMasks_;
+      }
+
+      public int getRequestHeaderMasksCount() {
+        return internalGetRequestHeaderMasks().getMap().size();
+      }
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRequestHeaderMasks(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetRequestHeaderMasks().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRequestHeaderMasksMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getRequestHeaderMasks() {
+        return getRequestHeaderMasksMap();
+      }
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getRequestHeaderMasksMap() {
+        return internalGetRequestHeaderMasks().getMap();
+      }
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestHeaderMasksOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestHeaderMasks().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * request_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestHeaderMasksOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestHeaderMasks().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int REQUEST_COOKIE_MASKS_FIELD_NUMBER = 2;
+      private static final class RequestCookieMasksDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_RequestCookieMasksEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> requestCookieMasks_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRequestCookieMasks() {
+        if (requestCookieMasks_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RequestCookieMasksDefaultEntryHolder.defaultEntry);
+        }
+        return requestCookieMasks_;
+      }
+
+      public int getRequestCookieMasksCount() {
+        return internalGetRequestCookieMasks().getMap().size();
+      }
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRequestCookieMasks(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetRequestCookieMasks().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRequestCookieMasksMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getRequestCookieMasks() {
+        return getRequestCookieMasksMap();
+      }
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getRequestCookieMasksMap() {
+        return internalGetRequestCookieMasks().getMap();
+      }
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestCookieMasksOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestCookieMasks().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestCookieMasksOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestCookieMasks().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int REQUEST_FIELD_MASKS_STRING_FIELD_NUMBER = 3;
+      private static final class RequestFieldMasksStringDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksStringEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> requestFieldMasksString_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRequestFieldMasksString() {
+        if (requestFieldMasksString_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RequestFieldMasksStringDefaultEntryHolder.defaultEntry);
+        }
+        return requestFieldMasksString_;
+      }
+
+      public int getRequestFieldMasksStringCount() {
+        return internalGetRequestFieldMasksString().getMap().size();
+      }
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRequestFieldMasksString(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetRequestFieldMasksString().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRequestFieldMasksStringMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksString() {
+        return getRequestFieldMasksStringMap();
+      }
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksStringMap() {
+        return internalGetRequestFieldMasksString().getMap();
+      }
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestFieldMasksStringOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestFieldMasksString().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * request_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestFieldMasksStringOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestFieldMasksString().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int REQUEST_FIELD_MASKS_NUMBER_FIELD_NUMBER = 4;
+      private static final class RequestFieldMasksNumberDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksNumberEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> requestFieldMasksNumber_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRequestFieldMasksNumber() {
+        if (requestFieldMasksNumber_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RequestFieldMasksNumberDefaultEntryHolder.defaultEntry);
+        }
+        return requestFieldMasksNumber_;
+      }
+
+      public int getRequestFieldMasksNumberCount() {
+        return internalGetRequestFieldMasksNumber().getMap().size();
+      }
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRequestFieldMasksNumber(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetRequestFieldMasksNumber().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRequestFieldMasksNumberMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksNumber() {
+        return getRequestFieldMasksNumberMap();
+      }
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksNumberMap() {
+        return internalGetRequestFieldMasksNumber().getMap();
+      }
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestFieldMasksNumberOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestFieldMasksNumber().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * request_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRequestFieldMasksNumberOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRequestFieldMasksNumber().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int RESPONSE_HEADER_MASKS_FIELD_NUMBER = 5;
+      private static final class ResponseHeaderMasksDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_ResponseHeaderMasksEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> responseHeaderMasks_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResponseHeaderMasks() {
+        if (responseHeaderMasks_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResponseHeaderMasksDefaultEntryHolder.defaultEntry);
+        }
+        return responseHeaderMasks_;
+      }
+
+      public int getResponseHeaderMasksCount() {
+        return internalGetResponseHeaderMasks().getMap().size();
+      }
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsResponseHeaderMasks(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetResponseHeaderMasks().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getResponseHeaderMasksMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getResponseHeaderMasks() {
+        return getResponseHeaderMasksMap();
+      }
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getResponseHeaderMasksMap() {
+        return internalGetResponseHeaderMasks().getMap();
+      }
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseHeaderMasksOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseHeaderMasks().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * response_header_masks contains a map of header keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseHeaderMasksOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseHeaderMasks().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int RESPONSE_COOKIE_MASKS_FIELD_NUMBER = 6;
+      private static final class ResponseCookieMasksDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_ResponseCookieMasksEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> responseCookieMasks_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResponseCookieMasks() {
+        if (responseCookieMasks_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResponseCookieMasksDefaultEntryHolder.defaultEntry);
+        }
+        return responseCookieMasks_;
+      }
+
+      public int getResponseCookieMasksCount() {
+        return internalGetResponseCookieMasks().getMap().size();
+      }
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsResponseCookieMasks(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetResponseCookieMasks().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getResponseCookieMasksMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getResponseCookieMasks() {
+        return getResponseCookieMasksMap();
+      }
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getResponseCookieMasksMap() {
+        return internalGetResponseCookieMasks().getMap();
+      }
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseCookieMasksOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseCookieMasks().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseCookieMasksOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseCookieMasks().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int RESPONSE_FIELD_MASKS_STRING_FIELD_NUMBER = 7;
+      private static final class ResponseFieldMasksStringDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksStringEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> responseFieldMasksString_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResponseFieldMasksString() {
+        if (responseFieldMasksString_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResponseFieldMasksStringDefaultEntryHolder.defaultEntry);
+        }
+        return responseFieldMasksString_;
+      }
+
+      public int getResponseFieldMasksStringCount() {
+        return internalGetResponseFieldMasksString().getMap().size();
+      }
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsResponseFieldMasksString(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetResponseFieldMasksString().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getResponseFieldMasksStringMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksString() {
+        return getResponseFieldMasksStringMap();
+      }
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksStringMap() {
+        return internalGetResponseFieldMasksString().getMap();
+      }
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseFieldMasksStringOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseFieldMasksString().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * response_field_masks_string contains a map of string body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseFieldMasksStringOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseFieldMasksString().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int RESPONSE_FIELD_MASKS_NUMBER_FIELD_NUMBER = 8;
+      private static final class ResponseFieldMasksNumberDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksNumberEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> responseFieldMasksNumber_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetResponseFieldMasksNumber() {
+        if (responseFieldMasksNumber_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry);
+        }
+        return responseFieldMasksNumber_;
+      }
+
+      public int getResponseFieldMasksNumberCount() {
+        return internalGetResponseFieldMasksNumber().getMap().size();
+      }
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsResponseFieldMasksNumber(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetResponseFieldMasksNumber().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getResponseFieldMasksNumberMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksNumber() {
+        return getResponseFieldMasksNumberMap();
+      }
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksNumberMap() {
+        return internalGetResponseFieldMasksNumber().getMap();
+      }
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseFieldMasksNumberOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseFieldMasksNumber().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * response_field_masks_number contains a map of number body fields to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getResponseFieldMasksNumberOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResponseFieldMasksNumber().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public static final int QUERY_STRING_MASKS_FIELD_NUMBER = 9;
+      private static final class QueryStringMasksDefaultEntryHolder {
+        static final com.google.protobuf.MapEntry<
+            java.lang.String, java.lang.String> defaultEntry =
+                com.google.protobuf.MapEntry
+                .<java.lang.String, java.lang.String>newDefaultInstance(
+                    dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_QueryStringMasksEntry_descriptor, 
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "");
+      }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> queryStringMasks_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetQueryStringMasks() {
+        if (queryStringMasks_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              QueryStringMasksDefaultEntryHolder.defaultEntry);
+        }
+        return queryStringMasks_;
+      }
+
+      public int getQueryStringMasksCount() {
+        return internalGetQueryStringMasks().getMap().size();
+      }
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsQueryStringMasks(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetQueryStringMasks().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getQueryStringMasksMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getQueryStringMasks() {
+        return getQueryStringMasksMap();
+      }
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getQueryStringMasksMap() {
+        return internalGetQueryStringMasks().getMap();
+      }
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getQueryStringMasksOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetQueryStringMasks().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * query_string_masks contains a map of query string keys to the masks applied to them.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getQueryStringMasksOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetQueryStringMasks().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetRequestHeaderMasks(),
+            RequestHeaderMasksDefaultEntryHolder.defaultEntry,
+            1);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetRequestCookieMasks(),
+            RequestCookieMasksDefaultEntryHolder.defaultEntry,
+            2);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetRequestFieldMasksString(),
+            RequestFieldMasksStringDefaultEntryHolder.defaultEntry,
+            3);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetRequestFieldMasksNumber(),
+            RequestFieldMasksNumberDefaultEntryHolder.defaultEntry,
+            4);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetResponseHeaderMasks(),
+            ResponseHeaderMasksDefaultEntryHolder.defaultEntry,
+            5);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetResponseCookieMasks(),
+            ResponseCookieMasksDefaultEntryHolder.defaultEntry,
+            6);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetResponseFieldMasksString(),
+            ResponseFieldMasksStringDefaultEntryHolder.defaultEntry,
+            7);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetResponseFieldMasksNumber(),
+            ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry,
+            8);
+        com.google.protobuf.GeneratedMessageV3
+          .serializeStringMapTo(
+            output,
+            internalGetQueryStringMasks(),
+            QueryStringMasksDefaultEntryHolder.defaultEntry,
+            9);
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetRequestHeaderMasks().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          requestHeaderMasks__ = RequestHeaderMasksDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(1, requestHeaderMasks__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetRequestCookieMasks().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          requestCookieMasks__ = RequestCookieMasksDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(2, requestCookieMasks__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetRequestFieldMasksString().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          requestFieldMasksString__ = RequestFieldMasksStringDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(3, requestFieldMasksString__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetRequestFieldMasksNumber().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          requestFieldMasksNumber__ = RequestFieldMasksNumberDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(4, requestFieldMasksNumber__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetResponseHeaderMasks().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          responseHeaderMasks__ = ResponseHeaderMasksDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(5, responseHeaderMasks__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetResponseCookieMasks().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          responseCookieMasks__ = ResponseCookieMasksDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(6, responseCookieMasks__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetResponseFieldMasksString().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          responseFieldMasksString__ = ResponseFieldMasksStringDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(7, responseFieldMasksString__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetResponseFieldMasksNumber().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          responseFieldMasksNumber__ = ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(8, responseFieldMasksNumber__);
+        }
+        for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+             : internalGetQueryStringMasks().getMap().entrySet()) {
+          com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+          queryStringMasks__ = QueryStringMasksDefaultEntryHolder.defaultEntry.newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+          size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(9, queryStringMasks__);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata)) {
+          return super.equals(obj);
+        }
+        dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata other = (dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata) obj;
+
+        if (!internalGetRequestHeaderMasks().equals(
+            other.internalGetRequestHeaderMasks())) return false;
+        if (!internalGetRequestCookieMasks().equals(
+            other.internalGetRequestCookieMasks())) return false;
+        if (!internalGetRequestFieldMasksString().equals(
+            other.internalGetRequestFieldMasksString())) return false;
+        if (!internalGetRequestFieldMasksNumber().equals(
+            other.internalGetRequestFieldMasksNumber())) return false;
+        if (!internalGetResponseHeaderMasks().equals(
+            other.internalGetResponseHeaderMasks())) return false;
+        if (!internalGetResponseCookieMasks().equals(
+            other.internalGetResponseCookieMasks())) return false;
+        if (!internalGetResponseFieldMasksString().equals(
+            other.internalGetResponseFieldMasksString())) return false;
+        if (!internalGetResponseFieldMasksNumber().equals(
+            other.internalGetResponseFieldMasksNumber())) return false;
+        if (!internalGetQueryStringMasks().equals(
+            other.internalGetQueryStringMasks())) return false;
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (!internalGetRequestHeaderMasks().getMap().isEmpty()) {
+          hash = (37 * hash) + REQUEST_HEADER_MASKS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetRequestHeaderMasks().hashCode();
+        }
+        if (!internalGetRequestCookieMasks().getMap().isEmpty()) {
+          hash = (37 * hash) + REQUEST_COOKIE_MASKS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetRequestCookieMasks().hashCode();
+        }
+        if (!internalGetRequestFieldMasksString().getMap().isEmpty()) {
+          hash = (37 * hash) + REQUEST_FIELD_MASKS_STRING_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetRequestFieldMasksString().hashCode();
+        }
+        if (!internalGetRequestFieldMasksNumber().getMap().isEmpty()) {
+          hash = (37 * hash) + REQUEST_FIELD_MASKS_NUMBER_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetRequestFieldMasksNumber().hashCode();
+        }
+        if (!internalGetResponseHeaderMasks().getMap().isEmpty()) {
+          hash = (37 * hash) + RESPONSE_HEADER_MASKS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetResponseHeaderMasks().hashCode();
+        }
+        if (!internalGetResponseCookieMasks().getMap().isEmpty()) {
+          hash = (37 * hash) + RESPONSE_COOKIE_MASKS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetResponseCookieMasks().hashCode();
+        }
+        if (!internalGetResponseFieldMasksString().getMap().isEmpty()) {
+          hash = (37 * hash) + RESPONSE_FIELD_MASKS_STRING_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetResponseFieldMasksString().hashCode();
+        }
+        if (!internalGetResponseFieldMasksNumber().getMap().isEmpty()) {
+          hash = (37 * hash) + RESPONSE_FIELD_MASKS_NUMBER_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetResponseFieldMasksNumber().hashCode();
+        }
+        if (!internalGetQueryStringMasks().getMap().isEmpty()) {
+          hash = (37 * hash) + QUERY_STRING_MASKS_FIELD_NUMBER;
+          hash = (53 * hash) + internalGetQueryStringMasks().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * MaskingMetadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * Protobuf type {@code ingest.IngestRequest.MaskingMetadata}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:ingest.IngestRequest.MaskingMetadata)
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_descriptor;
+        }
+
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetRequestHeaderMasks();
+            case 2:
+              return internalGetRequestCookieMasks();
+            case 3:
+              return internalGetRequestFieldMasksString();
+            case 4:
+              return internalGetRequestFieldMasksNumber();
+            case 5:
+              return internalGetResponseHeaderMasks();
+            case 6:
+              return internalGetResponseCookieMasks();
+            case 7:
+              return internalGetResponseFieldMasksString();
+            case 8:
+              return internalGetResponseFieldMasksNumber();
+            case 9:
+              return internalGetQueryStringMasks();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @SuppressWarnings({"rawtypes"})
+        protected com.google.protobuf.MapField internalGetMutableMapField(
+            int number) {
+          switch (number) {
+            case 1:
+              return internalGetMutableRequestHeaderMasks();
+            case 2:
+              return internalGetMutableRequestCookieMasks();
+            case 3:
+              return internalGetMutableRequestFieldMasksString();
+            case 4:
+              return internalGetMutableRequestFieldMasksNumber();
+            case 5:
+              return internalGetMutableResponseHeaderMasks();
+            case 6:
+              return internalGetMutableResponseCookieMasks();
+            case 7:
+              return internalGetMutableResponseFieldMasksString();
+            case 8:
+              return internalGetMutableResponseFieldMasksNumber();
+            case 9:
+              return internalGetMutableQueryStringMasks();
+            default:
+              throw new RuntimeException(
+                  "Invalid map field number: " + number);
+          }
+        }
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.class, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder.class);
+        }
+
+        // Construct using dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          internalGetMutableRequestHeaderMasks().clear();
+          internalGetMutableRequestCookieMasks().clear();
+          internalGetMutableRequestFieldMasksString().clear();
+          internalGetMutableRequestFieldMasksNumber().clear();
+          internalGetMutableResponseHeaderMasks().clear();
+          internalGetMutableResponseCookieMasks().clear();
+          internalGetMutableResponseFieldMasksString().clear();
+          internalGetMutableResponseFieldMasksNumber().clear();
+          internalGetMutableQueryStringMasks().clear();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return dev.speakeasyapi.schemas.Ingest.internal_static_ingest_IngestRequest_MaskingMetadata_descriptor;
+        }
+
+        @java.lang.Override
+        public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata getDefaultInstanceForType() {
+          return dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata build() {
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata buildPartial() {
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata result = new dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata(this);
+          int from_bitField0_ = bitField0_;
+          result.requestHeaderMasks_ = internalGetRequestHeaderMasks();
+          result.requestHeaderMasks_.makeImmutable();
+          result.requestCookieMasks_ = internalGetRequestCookieMasks();
+          result.requestCookieMasks_.makeImmutable();
+          result.requestFieldMasksString_ = internalGetRequestFieldMasksString();
+          result.requestFieldMasksString_.makeImmutable();
+          result.requestFieldMasksNumber_ = internalGetRequestFieldMasksNumber();
+          result.requestFieldMasksNumber_.makeImmutable();
+          result.responseHeaderMasks_ = internalGetResponseHeaderMasks();
+          result.responseHeaderMasks_.makeImmutable();
+          result.responseCookieMasks_ = internalGetResponseCookieMasks();
+          result.responseCookieMasks_.makeImmutable();
+          result.responseFieldMasksString_ = internalGetResponseFieldMasksString();
+          result.responseFieldMasksString_.makeImmutable();
+          result.responseFieldMasksNumber_ = internalGetResponseFieldMasksNumber();
+          result.responseFieldMasksNumber_.makeImmutable();
+          result.queryStringMasks_ = internalGetQueryStringMasks();
+          result.queryStringMasks_.makeImmutable();
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata) {
+            return mergeFrom((dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata other) {
+          if (other == dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.getDefaultInstance()) return this;
+          internalGetMutableRequestHeaderMasks().mergeFrom(
+              other.internalGetRequestHeaderMasks());
+          internalGetMutableRequestCookieMasks().mergeFrom(
+              other.internalGetRequestCookieMasks());
+          internalGetMutableRequestFieldMasksString().mergeFrom(
+              other.internalGetRequestFieldMasksString());
+          internalGetMutableRequestFieldMasksNumber().mergeFrom(
+              other.internalGetRequestFieldMasksNumber());
+          internalGetMutableResponseHeaderMasks().mergeFrom(
+              other.internalGetResponseHeaderMasks());
+          internalGetMutableResponseCookieMasks().mergeFrom(
+              other.internalGetResponseCookieMasks());
+          internalGetMutableResponseFieldMasksString().mergeFrom(
+              other.internalGetResponseFieldMasksString());
+          internalGetMutableResponseFieldMasksNumber().mergeFrom(
+              other.internalGetResponseFieldMasksNumber());
+          internalGetMutableQueryStringMasks().mergeFrom(
+              other.internalGetQueryStringMasks());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int bitField0_;
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> requestHeaderMasks_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRequestHeaderMasks() {
+          if (requestHeaderMasks_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                RequestHeaderMasksDefaultEntryHolder.defaultEntry);
+          }
+          return requestHeaderMasks_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRequestHeaderMasks() {
+          onChanged();;
+          if (requestHeaderMasks_ == null) {
+            requestHeaderMasks_ = com.google.protobuf.MapField.newMapField(
+                RequestHeaderMasksDefaultEntryHolder.defaultEntry);
+          }
+          if (!requestHeaderMasks_.isMutable()) {
+            requestHeaderMasks_ = requestHeaderMasks_.copy();
+          }
+          return requestHeaderMasks_;
+        }
+
+        public int getRequestHeaderMasksCount() {
+          return internalGetRequestHeaderMasks().getMap().size();
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsRequestHeaderMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetRequestHeaderMasks().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getRequestHeaderMasksMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getRequestHeaderMasks() {
+          return getRequestHeaderMasksMap();
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getRequestHeaderMasksMap() {
+          return internalGetRequestHeaderMasks().getMap();
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestHeaderMasksOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestHeaderMasks().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestHeaderMasksOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestHeaderMasks().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearRequestHeaderMasks() {
+          internalGetMutableRequestHeaderMasks().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+
+        public Builder removeRequestHeaderMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableRequestHeaderMasks().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableRequestHeaderMasks() {
+          return internalGetMutableRequestHeaderMasks().getMutableMap();
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+        public Builder putRequestHeaderMasks(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableRequestHeaderMasks().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * request_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_header_masks = 1;</code>
+         */
+
+        public Builder putAllRequestHeaderMasks(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableRequestHeaderMasks().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> requestCookieMasks_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRequestCookieMasks() {
+          if (requestCookieMasks_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                RequestCookieMasksDefaultEntryHolder.defaultEntry);
+          }
+          return requestCookieMasks_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRequestCookieMasks() {
+          onChanged();;
+          if (requestCookieMasks_ == null) {
+            requestCookieMasks_ = com.google.protobuf.MapField.newMapField(
+                RequestCookieMasksDefaultEntryHolder.defaultEntry);
+          }
+          if (!requestCookieMasks_.isMutable()) {
+            requestCookieMasks_ = requestCookieMasks_.copy();
+          }
+          return requestCookieMasks_;
+        }
+
+        public int getRequestCookieMasksCount() {
+          return internalGetRequestCookieMasks().getMap().size();
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsRequestCookieMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetRequestCookieMasks().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getRequestCookieMasksMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getRequestCookieMasks() {
+          return getRequestCookieMasksMap();
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getRequestCookieMasksMap() {
+          return internalGetRequestCookieMasks().getMap();
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestCookieMasksOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestCookieMasks().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestCookieMasksOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestCookieMasks().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearRequestCookieMasks() {
+          internalGetMutableRequestCookieMasks().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+
+        public Builder removeRequestCookieMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableRequestCookieMasks().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableRequestCookieMasks() {
+          return internalGetMutableRequestCookieMasks().getMutableMap();
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+        public Builder putRequestCookieMasks(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableRequestCookieMasks().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * request_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_cookie_masks = 2;</code>
+         */
+
+        public Builder putAllRequestCookieMasks(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableRequestCookieMasks().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> requestFieldMasksString_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRequestFieldMasksString() {
+          if (requestFieldMasksString_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                RequestFieldMasksStringDefaultEntryHolder.defaultEntry);
+          }
+          return requestFieldMasksString_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRequestFieldMasksString() {
+          onChanged();;
+          if (requestFieldMasksString_ == null) {
+            requestFieldMasksString_ = com.google.protobuf.MapField.newMapField(
+                RequestFieldMasksStringDefaultEntryHolder.defaultEntry);
+          }
+          if (!requestFieldMasksString_.isMutable()) {
+            requestFieldMasksString_ = requestFieldMasksString_.copy();
+          }
+          return requestFieldMasksString_;
+        }
+
+        public int getRequestFieldMasksStringCount() {
+          return internalGetRequestFieldMasksString().getMap().size();
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsRequestFieldMasksString(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetRequestFieldMasksString().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getRequestFieldMasksStringMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksString() {
+          return getRequestFieldMasksStringMap();
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksStringMap() {
+          return internalGetRequestFieldMasksString().getMap();
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestFieldMasksStringOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestFieldMasksString().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestFieldMasksStringOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestFieldMasksString().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearRequestFieldMasksString() {
+          internalGetMutableRequestFieldMasksString().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+
+        public Builder removeRequestFieldMasksString(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableRequestFieldMasksString().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableRequestFieldMasksString() {
+          return internalGetMutableRequestFieldMasksString().getMutableMap();
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+        public Builder putRequestFieldMasksString(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableRequestFieldMasksString().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * request_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_string = 3;</code>
+         */
+
+        public Builder putAllRequestFieldMasksString(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableRequestFieldMasksString().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> requestFieldMasksNumber_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRequestFieldMasksNumber() {
+          if (requestFieldMasksNumber_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                RequestFieldMasksNumberDefaultEntryHolder.defaultEntry);
+          }
+          return requestFieldMasksNumber_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRequestFieldMasksNumber() {
+          onChanged();;
+          if (requestFieldMasksNumber_ == null) {
+            requestFieldMasksNumber_ = com.google.protobuf.MapField.newMapField(
+                RequestFieldMasksNumberDefaultEntryHolder.defaultEntry);
+          }
+          if (!requestFieldMasksNumber_.isMutable()) {
+            requestFieldMasksNumber_ = requestFieldMasksNumber_.copy();
+          }
+          return requestFieldMasksNumber_;
+        }
+
+        public int getRequestFieldMasksNumberCount() {
+          return internalGetRequestFieldMasksNumber().getMap().size();
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsRequestFieldMasksNumber(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetRequestFieldMasksNumber().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getRequestFieldMasksNumberMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksNumber() {
+          return getRequestFieldMasksNumberMap();
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getRequestFieldMasksNumberMap() {
+          return internalGetRequestFieldMasksNumber().getMap();
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestFieldMasksNumberOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestFieldMasksNumber().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getRequestFieldMasksNumberOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetRequestFieldMasksNumber().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearRequestFieldMasksNumber() {
+          internalGetMutableRequestFieldMasksNumber().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+
+        public Builder removeRequestFieldMasksNumber(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableRequestFieldMasksNumber().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableRequestFieldMasksNumber() {
+          return internalGetMutableRequestFieldMasksNumber().getMutableMap();
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+        public Builder putRequestFieldMasksNumber(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableRequestFieldMasksNumber().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * request_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; request_field_masks_number = 4;</code>
+         */
+
+        public Builder putAllRequestFieldMasksNumber(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableRequestFieldMasksNumber().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> responseHeaderMasks_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResponseHeaderMasks() {
+          if (responseHeaderMasks_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ResponseHeaderMasksDefaultEntryHolder.defaultEntry);
+          }
+          return responseHeaderMasks_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResponseHeaderMasks() {
+          onChanged();;
+          if (responseHeaderMasks_ == null) {
+            responseHeaderMasks_ = com.google.protobuf.MapField.newMapField(
+                ResponseHeaderMasksDefaultEntryHolder.defaultEntry);
+          }
+          if (!responseHeaderMasks_.isMutable()) {
+            responseHeaderMasks_ = responseHeaderMasks_.copy();
+          }
+          return responseHeaderMasks_;
+        }
+
+        public int getResponseHeaderMasksCount() {
+          return internalGetResponseHeaderMasks().getMap().size();
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsResponseHeaderMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetResponseHeaderMasks().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getResponseHeaderMasksMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getResponseHeaderMasks() {
+          return getResponseHeaderMasksMap();
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getResponseHeaderMasksMap() {
+          return internalGetResponseHeaderMasks().getMap();
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseHeaderMasksOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseHeaderMasks().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseHeaderMasksOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseHeaderMasks().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearResponseHeaderMasks() {
+          internalGetMutableResponseHeaderMasks().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+
+        public Builder removeResponseHeaderMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableResponseHeaderMasks().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableResponseHeaderMasks() {
+          return internalGetMutableResponseHeaderMasks().getMutableMap();
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+        public Builder putResponseHeaderMasks(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableResponseHeaderMasks().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * response_header_masks contains a map of header keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_header_masks = 5;</code>
+         */
+
+        public Builder putAllResponseHeaderMasks(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableResponseHeaderMasks().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> responseCookieMasks_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResponseCookieMasks() {
+          if (responseCookieMasks_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ResponseCookieMasksDefaultEntryHolder.defaultEntry);
+          }
+          return responseCookieMasks_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResponseCookieMasks() {
+          onChanged();;
+          if (responseCookieMasks_ == null) {
+            responseCookieMasks_ = com.google.protobuf.MapField.newMapField(
+                ResponseCookieMasksDefaultEntryHolder.defaultEntry);
+          }
+          if (!responseCookieMasks_.isMutable()) {
+            responseCookieMasks_ = responseCookieMasks_.copy();
+          }
+          return responseCookieMasks_;
+        }
+
+        public int getResponseCookieMasksCount() {
+          return internalGetResponseCookieMasks().getMap().size();
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsResponseCookieMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetResponseCookieMasks().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getResponseCookieMasksMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getResponseCookieMasks() {
+          return getResponseCookieMasksMap();
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getResponseCookieMasksMap() {
+          return internalGetResponseCookieMasks().getMap();
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseCookieMasksOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseCookieMasks().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseCookieMasksOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseCookieMasks().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearResponseCookieMasks() {
+          internalGetMutableResponseCookieMasks().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+
+        public Builder removeResponseCookieMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableResponseCookieMasks().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableResponseCookieMasks() {
+          return internalGetMutableResponseCookieMasks().getMutableMap();
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+        public Builder putResponseCookieMasks(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableResponseCookieMasks().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * response_cookie_masks contains a map of cookie keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_cookie_masks = 6;</code>
+         */
+
+        public Builder putAllResponseCookieMasks(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableResponseCookieMasks().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> responseFieldMasksString_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResponseFieldMasksString() {
+          if (responseFieldMasksString_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ResponseFieldMasksStringDefaultEntryHolder.defaultEntry);
+          }
+          return responseFieldMasksString_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResponseFieldMasksString() {
+          onChanged();;
+          if (responseFieldMasksString_ == null) {
+            responseFieldMasksString_ = com.google.protobuf.MapField.newMapField(
+                ResponseFieldMasksStringDefaultEntryHolder.defaultEntry);
+          }
+          if (!responseFieldMasksString_.isMutable()) {
+            responseFieldMasksString_ = responseFieldMasksString_.copy();
+          }
+          return responseFieldMasksString_;
+        }
+
+        public int getResponseFieldMasksStringCount() {
+          return internalGetResponseFieldMasksString().getMap().size();
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsResponseFieldMasksString(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetResponseFieldMasksString().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getResponseFieldMasksStringMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksString() {
+          return getResponseFieldMasksStringMap();
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksStringMap() {
+          return internalGetResponseFieldMasksString().getMap();
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseFieldMasksStringOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseFieldMasksString().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseFieldMasksStringOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseFieldMasksString().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearResponseFieldMasksString() {
+          internalGetMutableResponseFieldMasksString().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+
+        public Builder removeResponseFieldMasksString(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableResponseFieldMasksString().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableResponseFieldMasksString() {
+          return internalGetMutableResponseFieldMasksString().getMutableMap();
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+        public Builder putResponseFieldMasksString(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableResponseFieldMasksString().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * response_field_masks_string contains a map of string body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_string = 7;</code>
+         */
+
+        public Builder putAllResponseFieldMasksString(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableResponseFieldMasksString().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> responseFieldMasksNumber_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResponseFieldMasksNumber() {
+          if (responseFieldMasksNumber_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry);
+          }
+          return responseFieldMasksNumber_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableResponseFieldMasksNumber() {
+          onChanged();;
+          if (responseFieldMasksNumber_ == null) {
+            responseFieldMasksNumber_ = com.google.protobuf.MapField.newMapField(
+                ResponseFieldMasksNumberDefaultEntryHolder.defaultEntry);
+          }
+          if (!responseFieldMasksNumber_.isMutable()) {
+            responseFieldMasksNumber_ = responseFieldMasksNumber_.copy();
+          }
+          return responseFieldMasksNumber_;
+        }
+
+        public int getResponseFieldMasksNumberCount() {
+          return internalGetResponseFieldMasksNumber().getMap().size();
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsResponseFieldMasksNumber(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetResponseFieldMasksNumber().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getResponseFieldMasksNumberMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksNumber() {
+          return getResponseFieldMasksNumberMap();
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getResponseFieldMasksNumberMap() {
+          return internalGetResponseFieldMasksNumber().getMap();
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseFieldMasksNumberOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseFieldMasksNumber().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getResponseFieldMasksNumberOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetResponseFieldMasksNumber().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearResponseFieldMasksNumber() {
+          internalGetMutableResponseFieldMasksNumber().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+
+        public Builder removeResponseFieldMasksNumber(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableResponseFieldMasksNumber().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableResponseFieldMasksNumber() {
+          return internalGetMutableResponseFieldMasksNumber().getMutableMap();
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+        public Builder putResponseFieldMasksNumber(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableResponseFieldMasksNumber().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * response_field_masks_number contains a map of number body fields to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; response_field_masks_number = 8;</code>
+         */
+
+        public Builder putAllResponseFieldMasksNumber(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableResponseFieldMasksNumber().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+
+        private com.google.protobuf.MapField<
+            java.lang.String, java.lang.String> queryStringMasks_;
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetQueryStringMasks() {
+          if (queryStringMasks_ == null) {
+            return com.google.protobuf.MapField.emptyMapField(
+                QueryStringMasksDefaultEntryHolder.defaultEntry);
+          }
+          return queryStringMasks_;
+        }
+        private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableQueryStringMasks() {
+          onChanged();;
+          if (queryStringMasks_ == null) {
+            queryStringMasks_ = com.google.protobuf.MapField.newMapField(
+                QueryStringMasksDefaultEntryHolder.defaultEntry);
+          }
+          if (!queryStringMasks_.isMutable()) {
+            queryStringMasks_ = queryStringMasks_.copy();
+          }
+          return queryStringMasks_;
+        }
+
+        public int getQueryStringMasksCount() {
+          return internalGetQueryStringMasks().getMap().size();
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+
+        @java.lang.Override
+        public boolean containsQueryStringMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          return internalGetQueryStringMasks().getMap().containsKey(key);
+        }
+        /**
+         * Use {@link #getQueryStringMasksMap()} instead.
+         */
+        @java.lang.Override
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String> getQueryStringMasks() {
+          return getQueryStringMasksMap();
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+        @java.lang.Override
+
+        public java.util.Map<java.lang.String, java.lang.String> getQueryStringMasksMap() {
+          return internalGetQueryStringMasks().getMap();
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getQueryStringMasksOrDefault(
+            java.lang.String key,
+            java.lang.String defaultValue) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetQueryStringMasks().getMap();
+          return map.containsKey(key) ? map.get(key) : defaultValue;
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+        @java.lang.Override
+
+        public java.lang.String getQueryStringMasksOrThrow(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          java.util.Map<java.lang.String, java.lang.String> map =
+              internalGetQueryStringMasks().getMap();
+          if (!map.containsKey(key)) {
+            throw new java.lang.IllegalArgumentException();
+          }
+          return map.get(key);
+        }
+
+        public Builder clearQueryStringMasks() {
+          internalGetMutableQueryStringMasks().getMutableMap()
+              .clear();
+          return this;
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+
+        public Builder removeQueryStringMasks(
+            java.lang.String key) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          internalGetMutableQueryStringMasks().getMutableMap()
+              .remove(key);
+          return this;
+        }
+        /**
+         * Use alternate mutation accessors instead.
+         */
+        @java.lang.Deprecated
+        public java.util.Map<java.lang.String, java.lang.String>
+        getMutableQueryStringMasks() {
+          return internalGetMutableQueryStringMasks().getMutableMap();
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+        public Builder putQueryStringMasks(
+            java.lang.String key,
+            java.lang.String value) {
+          if (key == null) { throw new NullPointerException("map key"); }
+          if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+          internalGetMutableQueryStringMasks().getMutableMap()
+              .put(key, value);
+          return this;
+        }
+        /**
+         * <pre>
+         * query_string_masks contains a map of query string keys to the masks applied to them.
+         * </pre>
+         *
+         * <code>map&lt;string, string&gt; query_string_masks = 9;</code>
+         */
+
+        public Builder putAllQueryStringMasks(
+            java.util.Map<java.lang.String, java.lang.String> values) {
+          internalGetMutableQueryStringMasks().getMutableMap()
+              .putAll(values);
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:ingest.IngestRequest.MaskingMetadata)
+      }
+
+      // @@protoc_insertion_point(class_scope:ingest.IngestRequest.MaskingMetadata)
+      private static final dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata();
+      }
+
+      public static dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<MaskingMetadata>
+          PARSER = new com.google.protobuf.AbstractParser<MaskingMetadata>() {
+        @java.lang.Override
+        public MaskingMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new MaskingMetadata(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<MaskingMetadata> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<MaskingMetadata> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
     public static final int HAR_FIELD_NUMBER = 1;
     private volatile java.lang.Object har_;
     /**
      * <pre>
-     * har is string containing a HTTP Archive 1.2 formatted file contents
+     * har is string containing a HTTP Archive 1.2 formatted file contents.
      * </pre>
      *
      * <code>string har = 1;</code>
@@ -261,7 +3982,7 @@ public final class Ingest {
     }
     /**
      * <pre>
-     * har is string containing a HTTP Archive 1.2 formatted file contents
+     * har is string containing a HTTP Archive 1.2 formatted file contents.
      * </pre>
      *
      * <code>string har = 1;</code>
@@ -286,7 +4007,7 @@ public final class Ingest {
     private volatile java.lang.Object pathHint_;
     /**
      * <pre>
-     * path_hint is a hint to the ingest service about the structure of the request path
+     * path_hint is a hint to the ingest service about the structure of the request path.
      * </pre>
      *
      * <code>string path_hint = 2;</code>
@@ -307,7 +4028,7 @@ public final class Ingest {
     }
     /**
      * <pre>
-     * path_hint is a hint to the ingest service about the structure of the request path
+     * path_hint is a hint to the ingest service about the structure of the request path.
      * </pre>
      *
      * <code>string path_hint = 2;</code>
@@ -332,7 +4053,7 @@ public final class Ingest {
     private volatile java.lang.Object apiId_;
     /**
      * <pre>
-     * api_id is used to associate requests with a particular Api in the Speakeasy platform
+     * api_id is used to associate requests with a particular Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string api_id = 3;</code>
@@ -353,7 +4074,7 @@ public final class Ingest {
     }
     /**
      * <pre>
-     * api_id is used to associate requests with a particular Api in the Speakeasy platform
+     * api_id is used to associate requests with a particular Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string api_id = 3;</code>
@@ -378,7 +4099,7 @@ public final class Ingest {
     private volatile java.lang.Object versionId_;
     /**
      * <pre>
-     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string version_id = 4;</code>
@@ -399,7 +4120,7 @@ public final class Ingest {
     }
     /**
      * <pre>
-     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+     * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
      * </pre>
      *
      * <code>string version_id = 4;</code>
@@ -424,7 +4145,7 @@ public final class Ingest {
     private volatile java.lang.Object customerId_;
     /**
      * <pre>
-     * customer_id is the id of the customer who is making the request
+     * customer_id is the id of the customer who is making the request.
      * </pre>
      *
      * <code>string customer_id = 5;</code>
@@ -445,7 +4166,7 @@ public final class Ingest {
     }
     /**
      * <pre>
-     * customer_id is the id of the customer who is making the request
+     * customer_id is the id of the customer who is making the request.
      * </pre>
      *
      * <code>string customer_id = 5;</code>
@@ -464,6 +4185,44 @@ public final class Ingest {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int MASKING_METADATA_FIELD_NUMBER = 6;
+    private dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata maskingMetadata_;
+    /**
+     * <pre>
+     * masking_metadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+     * @return Whether the maskingMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaskingMetadata() {
+      return maskingMetadata_ != null;
+    }
+    /**
+     * <pre>
+     * masking_metadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+     * @return The maskingMetadata.
+     */
+    @java.lang.Override
+    public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata getMaskingMetadata() {
+      return maskingMetadata_ == null ? dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.getDefaultInstance() : maskingMetadata_;
+    }
+    /**
+     * <pre>
+     * masking_metadata contains information about any masking added to the har.
+     * </pre>
+     *
+     * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+     */
+    @java.lang.Override
+    public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder getMaskingMetadataOrBuilder() {
+      return getMaskingMetadata();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -495,6 +4254,9 @@ public final class Ingest {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, customerId_);
       }
+      if (maskingMetadata_ != null) {
+        output.writeMessage(6, getMaskingMetadata());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -518,6 +4280,10 @@ public final class Ingest {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(customerId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, customerId_);
+      }
+      if (maskingMetadata_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getMaskingMetadata());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -544,6 +4310,11 @@ public final class Ingest {
           .equals(other.getVersionId())) return false;
       if (!getCustomerId()
           .equals(other.getCustomerId())) return false;
+      if (hasMaskingMetadata() != other.hasMaskingMetadata()) return false;
+      if (hasMaskingMetadata()) {
+        if (!getMaskingMetadata()
+            .equals(other.getMaskingMetadata())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -565,6 +4336,10 @@ public final class Ingest {
       hash = (53 * hash) + getVersionId().hashCode();
       hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCustomerId().hashCode();
+      if (hasMaskingMetadata()) {
+        hash = (37 * hash) + MASKING_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getMaskingMetadata().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -712,6 +4487,12 @@ public final class Ingest {
 
         customerId_ = "";
 
+        if (maskingMetadataBuilder_ == null) {
+          maskingMetadata_ = null;
+        } else {
+          maskingMetadata_ = null;
+          maskingMetadataBuilder_ = null;
+        }
         return this;
       }
 
@@ -743,6 +4524,11 @@ public final class Ingest {
         result.apiId_ = apiId_;
         result.versionId_ = versionId_;
         result.customerId_ = customerId_;
+        if (maskingMetadataBuilder_ == null) {
+          result.maskingMetadata_ = maskingMetadata_;
+        } else {
+          result.maskingMetadata_ = maskingMetadataBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -811,6 +4597,9 @@ public final class Ingest {
           customerId_ = other.customerId_;
           onChanged();
         }
+        if (other.hasMaskingMetadata()) {
+          mergeMaskingMetadata(other.getMaskingMetadata());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -843,7 +4632,7 @@ public final class Ingest {
       private java.lang.Object har_ = "";
       /**
        * <pre>
-       * har is string containing a HTTP Archive 1.2 formatted file contents
+       * har is string containing a HTTP Archive 1.2 formatted file contents.
        * </pre>
        *
        * <code>string har = 1;</code>
@@ -863,7 +4652,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * har is string containing a HTTP Archive 1.2 formatted file contents
+       * har is string containing a HTTP Archive 1.2 formatted file contents.
        * </pre>
        *
        * <code>string har = 1;</code>
@@ -884,7 +4673,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * har is string containing a HTTP Archive 1.2 formatted file contents
+       * har is string containing a HTTP Archive 1.2 formatted file contents.
        * </pre>
        *
        * <code>string har = 1;</code>
@@ -903,7 +4692,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * har is string containing a HTTP Archive 1.2 formatted file contents
+       * har is string containing a HTTP Archive 1.2 formatted file contents.
        * </pre>
        *
        * <code>string har = 1;</code>
@@ -917,7 +4706,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * har is string containing a HTTP Archive 1.2 formatted file contents
+       * har is string containing a HTTP Archive 1.2 formatted file contents.
        * </pre>
        *
        * <code>string har = 1;</code>
@@ -939,7 +4728,7 @@ public final class Ingest {
       private java.lang.Object pathHint_ = "";
       /**
        * <pre>
-       * path_hint is a hint to the ingest service about the structure of the request path
+       * path_hint is a hint to the ingest service about the structure of the request path.
        * </pre>
        *
        * <code>string path_hint = 2;</code>
@@ -959,7 +4748,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * path_hint is a hint to the ingest service about the structure of the request path
+       * path_hint is a hint to the ingest service about the structure of the request path.
        * </pre>
        *
        * <code>string path_hint = 2;</code>
@@ -980,7 +4769,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * path_hint is a hint to the ingest service about the structure of the request path
+       * path_hint is a hint to the ingest service about the structure of the request path.
        * </pre>
        *
        * <code>string path_hint = 2;</code>
@@ -999,7 +4788,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * path_hint is a hint to the ingest service about the structure of the request path
+       * path_hint is a hint to the ingest service about the structure of the request path.
        * </pre>
        *
        * <code>string path_hint = 2;</code>
@@ -1013,7 +4802,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * path_hint is a hint to the ingest service about the structure of the request path
+       * path_hint is a hint to the ingest service about the structure of the request path.
        * </pre>
        *
        * <code>string path_hint = 2;</code>
@@ -1035,7 +4824,7 @@ public final class Ingest {
       private java.lang.Object apiId_ = "";
       /**
        * <pre>
-       * api_id is used to associate requests with a particular Api in the Speakeasy platform
+       * api_id is used to associate requests with a particular Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string api_id = 3;</code>
@@ -1055,7 +4844,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * api_id is used to associate requests with a particular Api in the Speakeasy platform
+       * api_id is used to associate requests with a particular Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string api_id = 3;</code>
@@ -1076,7 +4865,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * api_id is used to associate requests with a particular Api in the Speakeasy platform
+       * api_id is used to associate requests with a particular Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string api_id = 3;</code>
@@ -1095,7 +4884,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * api_id is used to associate requests with a particular Api in the Speakeasy platform
+       * api_id is used to associate requests with a particular Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string api_id = 3;</code>
@@ -1109,7 +4898,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * api_id is used to associate requests with a particular Api in the Speakeasy platform
+       * api_id is used to associate requests with a particular Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string api_id = 3;</code>
@@ -1131,7 +4920,7 @@ public final class Ingest {
       private java.lang.Object versionId_ = "";
       /**
        * <pre>
-       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string version_id = 4;</code>
@@ -1151,7 +4940,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string version_id = 4;</code>
@@ -1172,7 +4961,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string version_id = 4;</code>
@@ -1191,7 +4980,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string version_id = 4;</code>
@@ -1205,7 +4994,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform
+       * version_id is used to associate requests with a particular version of an Api in the Speakeasy platform.
        * </pre>
        *
        * <code>string version_id = 4;</code>
@@ -1227,7 +5016,7 @@ public final class Ingest {
       private java.lang.Object customerId_ = "";
       /**
        * <pre>
-       * customer_id is the id of the customer who is making the request
+       * customer_id is the id of the customer who is making the request.
        * </pre>
        *
        * <code>string customer_id = 5;</code>
@@ -1247,7 +5036,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * customer_id is the id of the customer who is making the request
+       * customer_id is the id of the customer who is making the request.
        * </pre>
        *
        * <code>string customer_id = 5;</code>
@@ -1268,7 +5057,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * customer_id is the id of the customer who is making the request
+       * customer_id is the id of the customer who is making the request.
        * </pre>
        *
        * <code>string customer_id = 5;</code>
@@ -1287,7 +5076,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * customer_id is the id of the customer who is making the request
+       * customer_id is the id of the customer who is making the request.
        * </pre>
        *
        * <code>string customer_id = 5;</code>
@@ -1301,7 +5090,7 @@ public final class Ingest {
       }
       /**
        * <pre>
-       * customer_id is the id of the customer who is making the request
+       * customer_id is the id of the customer who is making the request.
        * </pre>
        *
        * <code>string customer_id = 5;</code>
@@ -1318,6 +5107,161 @@ public final class Ingest {
         customerId_ = value;
         onChanged();
         return this;
+      }
+
+      private dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata maskingMetadata_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder> maskingMetadataBuilder_;
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       * @return Whether the maskingMetadata field is set.
+       */
+      public boolean hasMaskingMetadata() {
+        return maskingMetadataBuilder_ != null || maskingMetadata_ != null;
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       * @return The maskingMetadata.
+       */
+      public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata getMaskingMetadata() {
+        if (maskingMetadataBuilder_ == null) {
+          return maskingMetadata_ == null ? dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.getDefaultInstance() : maskingMetadata_;
+        } else {
+          return maskingMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      public Builder setMaskingMetadata(dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata value) {
+        if (maskingMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          maskingMetadata_ = value;
+          onChanged();
+        } else {
+          maskingMetadataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      public Builder setMaskingMetadata(
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder builderForValue) {
+        if (maskingMetadataBuilder_ == null) {
+          maskingMetadata_ = builderForValue.build();
+          onChanged();
+        } else {
+          maskingMetadataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      public Builder mergeMaskingMetadata(dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata value) {
+        if (maskingMetadataBuilder_ == null) {
+          if (maskingMetadata_ != null) {
+            maskingMetadata_ =
+              dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.newBuilder(maskingMetadata_).mergeFrom(value).buildPartial();
+          } else {
+            maskingMetadata_ = value;
+          }
+          onChanged();
+        } else {
+          maskingMetadataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      public Builder clearMaskingMetadata() {
+        if (maskingMetadataBuilder_ == null) {
+          maskingMetadata_ = null;
+          onChanged();
+        } else {
+          maskingMetadata_ = null;
+          maskingMetadataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder getMaskingMetadataBuilder() {
+        
+        onChanged();
+        return getMaskingMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      public dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder getMaskingMetadataOrBuilder() {
+        if (maskingMetadataBuilder_ != null) {
+          return maskingMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return maskingMetadata_ == null ?
+              dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.getDefaultInstance() : maskingMetadata_;
+        }
+      }
+      /**
+       * <pre>
+       * masking_metadata contains information about any masking added to the har.
+       * </pre>
+       *
+       * <code>.ingest.IngestRequest.MaskingMetadata masking_metadata = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder> 
+          getMaskingMetadataFieldBuilder() {
+        if (maskingMetadataBuilder_ == null) {
+          maskingMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadata.Builder, dev.speakeasyapi.schemas.Ingest.IngestRequest.MaskingMetadataOrBuilder>(
+                  getMaskingMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          maskingMetadata_ = null;
+        }
+        return maskingMetadataBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1806,6 +5750,56 @@ public final class Ingest {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ingest_IngestRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestHeaderMasksEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_RequestHeaderMasksEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestCookieMasksEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_RequestCookieMasksEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksStringEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksStringEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksNumberEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksNumberEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseHeaderMasksEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_ResponseHeaderMasksEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseCookieMasksEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_ResponseCookieMasksEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksStringEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksStringEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksNumberEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksNumberEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ingest_IngestRequest_MaskingMetadata_QueryStringMasksEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ingest_IngestRequest_MaskingMetadata_QueryStringMasksEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ingest_IngestResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -1819,15 +5813,53 @@ public final class Ingest {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\034registry/ingest/ingest.proto\022\006ingest\"h" +
-      "\n\rIngestRequest\022\013\n\003har\030\001 \001(\t\022\021\n\tpath_hin" +
-      "t\030\002 \001(\t\022\016\n\006api_id\030\003 \001(\t\022\022\n\nversion_id\030\004 " +
-      "\001(\t\022\023\n\013customer_id\030\005 \001(\t\"\020\n\016IngestRespon" +
-      "se2J\n\rIngestService\0229\n\006Ingest\022\025.ingest.I" +
-      "ngestRequest\032\026.ingest.IngestResponse\"\000B^" +
-      "\n\030dev.speakeasyapi.schemasZBgithub.com/s" +
-      "peakeasy-api/speakeasy-schemas/grpc/go/r" +
-      "egistry/ingestb\006proto3"
+      "\n\034registry/ingest/ingest.proto\022\006ingest\"\333" +
+      "\014\n\rIngestRequest\022\013\n\003har\030\001 \001(\t\022\021\n\tpath_hi" +
+      "nt\030\002 \001(\t\022\016\n\006api_id\030\003 \001(\t\022\022\n\nversion_id\030\004" +
+      " \001(\t\022\023\n\013customer_id\030\005 \001(\t\022?\n\020masking_met" +
+      "adata\030\006 \001(\0132%.ingest.IngestRequest.Maski" +
+      "ngMetadata\032\257\013\n\017MaskingMetadata\022[\n\024reques" +
+      "t_header_masks\030\001 \003(\0132=.ingest.IngestRequ" +
+      "est.MaskingMetadata.RequestHeaderMasksEn" +
+      "try\022[\n\024request_cookie_masks\030\002 \003(\0132=.inge" +
+      "st.IngestRequest.MaskingMetadata.Request" +
+      "CookieMasksEntry\022f\n\032request_field_masks_" +
+      "string\030\003 \003(\0132B.ingest.IngestRequest.Mask" +
+      "ingMetadata.RequestFieldMasksStringEntry" +
+      "\022f\n\032request_field_masks_number\030\004 \003(\0132B.i" +
+      "ngest.IngestRequest.MaskingMetadata.Requ" +
+      "estFieldMasksNumberEntry\022]\n\025response_hea" +
+      "der_masks\030\005 \003(\0132>.ingest.IngestRequest.M" +
+      "askingMetadata.ResponseHeaderMasksEntry\022" +
+      "]\n\025response_cookie_masks\030\006 \003(\0132>.ingest." +
+      "IngestRequest.MaskingMetadata.ResponseCo" +
+      "okieMasksEntry\022h\n\033response_field_masks_s" +
+      "tring\030\007 \003(\0132C.ingest.IngestRequest.Maski" +
+      "ngMetadata.ResponseFieldMasksStringEntry" +
+      "\022h\n\033response_field_masks_number\030\010 \003(\0132C." +
+      "ingest.IngestRequest.MaskingMetadata.Res" +
+      "ponseFieldMasksNumberEntry\022W\n\022query_stri" +
+      "ng_masks\030\t \003(\0132;.ingest.IngestRequest.Ma" +
+      "skingMetadata.QueryStringMasksEntry\0329\n\027R" +
+      "equestHeaderMasksEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v" +
+      "alue\030\002 \001(\t:\0028\001\0329\n\027RequestCookieMasksEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032>\n\034Req" +
+      "uestFieldMasksStringEntry\022\013\n\003key\030\001 \001(\t\022\r" +
+      "\n\005value\030\002 \001(\t:\0028\001\032>\n\034RequestFieldMasksNu" +
+      "mberEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\032:\n\030ResponseHeaderMasksEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032:\n\030ResponseCookieM" +
+      "asksEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
+      "\001\032?\n\035ResponseFieldMasksStringEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032?\n\035ResponseFi" +
+      "eldMasksNumberEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\t:\0028\001\0327\n\025QueryStringMasksEntry\022\013\n\003" +
+      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\020\n\016IngestRe" +
+      "sponse2J\n\rIngestService\0229\n\006Ingest\022\025.inge" +
+      "st.IngestRequest\032\026.ingest.IngestResponse" +
+      "\"\000B^\n\030dev.speakeasyapi.schemasZBgithub.c" +
+      "om/speakeasy-api/speakeasy-schemas/grpc/" +
+      "go/registry/ingestb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1838,7 +5870,67 @@ public final class Ingest {
     internal_static_ingest_IngestRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ingest_IngestRequest_descriptor,
-        new java.lang.String[] { "Har", "PathHint", "ApiId", "VersionId", "CustomerId", });
+        new java.lang.String[] { "Har", "PathHint", "ApiId", "VersionId", "CustomerId", "MaskingMetadata", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_descriptor =
+      internal_static_ingest_IngestRequest_descriptor.getNestedTypes().get(0);
+    internal_static_ingest_IngestRequest_MaskingMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_descriptor,
+        new java.lang.String[] { "RequestHeaderMasks", "RequestCookieMasks", "RequestFieldMasksString", "RequestFieldMasksNumber", "ResponseHeaderMasks", "ResponseCookieMasks", "ResponseFieldMasksString", "ResponseFieldMasksNumber", "QueryStringMasks", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestHeaderMasksEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(0);
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestHeaderMasksEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_RequestHeaderMasksEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestCookieMasksEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(1);
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestCookieMasksEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_RequestCookieMasksEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksStringEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(2);
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksStringEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksStringEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksNumberEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(3);
+    internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksNumberEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_RequestFieldMasksNumberEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseHeaderMasksEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(4);
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseHeaderMasksEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_ResponseHeaderMasksEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseCookieMasksEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(5);
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseCookieMasksEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_ResponseCookieMasksEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksStringEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(6);
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksStringEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksStringEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksNumberEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(7);
+    internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksNumberEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_ResponseFieldMasksNumberEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_ingest_IngestRequest_MaskingMetadata_QueryStringMasksEntry_descriptor =
+      internal_static_ingest_IngestRequest_MaskingMetadata_descriptor.getNestedTypes().get(8);
+    internal_static_ingest_IngestRequest_MaskingMetadata_QueryStringMasksEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ingest_IngestRequest_MaskingMetadata_QueryStringMasksEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_ingest_IngestResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_ingest_IngestResponse_fieldAccessorTable = new

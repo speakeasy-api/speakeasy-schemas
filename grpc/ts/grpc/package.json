@@ -1,0 +1,15 @@
+{
+  "name": "@speakeasy-api/speakeasy-schemas",
+  "version": "1.1.2",
+  "description": "TBD",
+  "dependencies": {
+    "@types/google-protobuf": "^3.15.6",
+    "google-protobuf": "^3.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speakeasy-api/speakeasy-schemas"
+  },
+  "author": "Speakeasy API",
+  "license": "ISC"
+}
