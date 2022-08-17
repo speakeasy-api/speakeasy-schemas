@@ -2,4 +2,4 @@ generate:
 	./scripts/generate-protos.sh
 lint:
 	go install github.com/yoheimuta/protolint/cmd/protolint@latest
-	protolint lint .
+	protolint lint ./grpc/protos

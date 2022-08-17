@@ -13,8 +13,9 @@ JAVADIR="${BASEDIR}/grpc/java"
 rm -rf "${GOOUTDIR}"
 mkdir -p "${GOOUTDIR}"
 
-rm -rf "${TSOUTDIR}"
+rm -rf "${TSOUTDIR}" 
 mkdir -p "${TSOUTDIR}"
+cp ${TSBASEDIR}/packagefiles/* "${TSOUTDIR}"
 
 pushd "${PROTOPATH}"
 FILES=$(find . -type f -name "*.proto")

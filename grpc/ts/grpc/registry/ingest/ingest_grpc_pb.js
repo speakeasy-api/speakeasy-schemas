@@ -29,7 +29,7 @@ function deserialize_ingest_IngestResponse(buffer_arg) {
 
 // IngestService is the service definition for the registry ingest endpoint.
 var IngestServiceService = exports.IngestServiceService = {
-  //  Ingest is the rpc handling ingest from the SDK
+  //  Ingest is the rpc handling ingest from the SDK.
 ingest: {
     path: '/ingest.IngestService/Ingest',
     requestStream: false,

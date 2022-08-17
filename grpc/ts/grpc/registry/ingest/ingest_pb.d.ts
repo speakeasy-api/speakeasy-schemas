@@ -19,6 +19,11 @@ export class IngestRequest extends jspb.Message {
   getCustomerId(): string;
   setCustomerId(value: string): void;
 
+  hasMaskingMetadata(): boolean;
+  clearMaskingMetadata(): void;
+  getMaskingMetadata(): IngestRequest.MaskingMetadata | undefined;
+  setMaskingMetadata(value?: IngestRequest.MaskingMetadata): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): IngestRequest.AsObject;
   static toObject(includeInstance: boolean, msg: IngestRequest): IngestRequest.AsObject;
@@ -36,6 +41,50 @@ export namespace IngestRequest {
     apiId: string,
     versionId: string,
     customerId: string,
+    maskingMetadata?: IngestRequest.MaskingMetadata.AsObject,
+  }
+
+  export class MaskingMetadata extends jspb.Message {
+    getRequestHeaderMasksMap(): jspb.Map<string, string>;
+    clearRequestHeaderMasksMap(): void;
+    getRequestCookieMasksMap(): jspb.Map<string, string>;
+    clearRequestCookieMasksMap(): void;
+    getRequestFieldMasksStringMap(): jspb.Map<string, string>;
+    clearRequestFieldMasksStringMap(): void;
+    getRequestFieldMasksNumberMap(): jspb.Map<string, string>;
+    clearRequestFieldMasksNumberMap(): void;
+    getResponseHeaderMasksMap(): jspb.Map<string, string>;
+    clearResponseHeaderMasksMap(): void;
+    getResponseCookieMasksMap(): jspb.Map<string, string>;
+    clearResponseCookieMasksMap(): void;
+    getResponseFieldMasksStringMap(): jspb.Map<string, string>;
+    clearResponseFieldMasksStringMap(): void;
+    getResponseFieldMasksNumberMap(): jspb.Map<string, string>;
+    clearResponseFieldMasksNumberMap(): void;
+    getQueryStringMasksMap(): jspb.Map<string, string>;
+    clearQueryStringMasksMap(): void;
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): MaskingMetadata.AsObject;
+    static toObject(includeInstance: boolean, msg: MaskingMetadata): MaskingMetadata.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: MaskingMetadata, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): MaskingMetadata;
+    static deserializeBinaryFromReader(message: MaskingMetadata, reader: jspb.BinaryReader): MaskingMetadata;
+  }
+
+  export namespace MaskingMetadata {
+    export type AsObject = {
+      requestHeaderMasksMap: Array<[string, string]>,
+      requestCookieMasksMap: Array<[string, string]>,
+      requestFieldMasksStringMap: Array<[string, string]>,
+      requestFieldMasksNumberMap: Array<[string, string]>,
+      responseHeaderMasksMap: Array<[string, string]>,
+      responseCookieMasksMap: Array<[string, string]>,
+      responseFieldMasksStringMap: Array<[string, string]>,
+      responseFieldMasksNumberMap: Array<[string, string]>,
+      queryStringMasksMap: Array<[string, string]>,
+    }
   }
 }
 
