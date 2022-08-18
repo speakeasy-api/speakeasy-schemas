@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package embedaccesstoken;
+
+option go_package = "github.com/speakeasy-api/speakeasy-schemas/grpc/go/registry/embedaccesstoken";
+option java_package = "dev.speakeasyapi.accesstokens";
+
+// EmbedAccessTokenService is the service definition for the registry embed-access-token endpoint.
+service EmbedAccessTokenService {
+    //  Get is the rpc handling access token retrieval from the SDK
+    rpc Get(EmbedAccessTokenRequest) returns (EmbedAccessTokenResponse) {}
+}
+
+// EmbedAccessTokenRequest is the request message for the Get rpc.
+message EmbedAccessTokenRequest {
+    message Filter {
+        string key = 1;
+        string operator = 2;
+        string value = 3;
+    }
+    repeated Filter filters = 1;
+}
+
+// EmbedAccessTokenResponse is the response message for the Get rpc.
+message EmbedAccessTokenResponse {
+    string accessToken = 1;
+}

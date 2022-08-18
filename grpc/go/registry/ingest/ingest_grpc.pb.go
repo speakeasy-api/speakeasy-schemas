@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type IngestServiceClient interface {
-	//  Ingest is the rpc handling ingest from the SDK.
+	// Ingest is the rpc handling ingest from the SDK.
 	Ingest(ctx context.Context, in *IngestRequest, opts ...grpc.CallOption) (*IngestResponse, error)
 }
 
@@ -47,7 +47,7 @@ func (c *ingestServiceClient) Ingest(ctx context.Context, in *IngestRequest, opt
 // All implementations must embed UnimplementedIngestServiceServer
 // for forward compatibility
 type IngestServiceServer interface {
-	//  Ingest is the rpc handling ingest from the SDK.
+	// Ingest is the rpc handling ingest from the SDK.
 	Ingest(context.Context, *IngestRequest) (*IngestResponse, error)
 	mustEmbedUnimplementedIngestServiceServer()
 }

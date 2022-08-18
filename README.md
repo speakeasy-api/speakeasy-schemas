@@ -7,7 +7,7 @@
    2. Install via `brew install protobuf@3 && brew link protobuf@3` (or another method if you prefer)
 2. Make sure you are using JDK 8
 3. Install gradle so its usable from the command line: https://gradle.org/install/
-4. Run `npm install` in `speakeasy-schemas/grpc/ts` to install the typescript compiler
+4. Run `npm install` in `speakeasy-schemas/grpc/ts` to install the typescript compiler (if you're using an M1, add the `--target_arch=x64` flag to the install command)
 5. Setup `protolint` in your IDE. (vscode: https://marketplace.visualstudio.com/items?itemName=Plex.vscode-protolint)
 
 ## Linting
