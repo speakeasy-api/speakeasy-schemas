@@ -19,7 +19,7 @@
 ### Golang
 
 1. Run `make generate` from the root of the project.
-   
+
 This will generate to golang files in `/grpc/go`. Then this repo just needs to be pushed to github and the golang files can be included in other projects.
 
 ### Java
@@ -27,3 +27,9 @@ This will generate to golang files in `/grpc/go`. Then this repo just needs to b
 1. Run `make generate` from the root of the project.
 
 This will generate the java library in `/grpc/java/lib/build/libs/lib.jar` which can be copied to the `lib/` directory of another project.
+
+### Rust
+
+1. Run `make generate` from the root of the project.
+
+This will generate the rust library in `/grpc/rust/lib/src` which can be copied to the `src/` directory of another project.
