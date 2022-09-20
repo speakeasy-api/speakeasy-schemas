@@ -9,6 +9,7 @@ TSOUTDIR="${TSBASEDIR}/grpc"
 PROTOC_GEN_TS_PATH="${TSBASEDIR}/node_modules/.bin/protoc-gen-ts"
 PROTOC_GEN_GRPC_PATH="${TSBASEDIR}/node_modules/.bin/grpc_tools_node_protoc_plugin"
 JAVADIR="${BASEDIR}/grpc/java"
+RUSTDIR="${BASEDIR}/grpc/rust/generator"
 
 rm -rf "${GOOUTDIR}"
 mkdir -p "${GOOUTDIR}"
@@ -32,4 +33,8 @@ popd
 
 pushd $JAVADIR
 gradle build
+popd
+
+pushd $RUSTDIR
+cargo run
 popd
