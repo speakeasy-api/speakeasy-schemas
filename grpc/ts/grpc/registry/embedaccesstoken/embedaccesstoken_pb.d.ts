@@ -21,11 +21,8 @@ export class EmbedAccessTokenRequest extends jspb.Message {
 
   getJwtCustomClaimsMap(): jspb.Map<string, string>;
   clearJwtCustomClaimsMap(): void;
-  clearPermissionsList(): void;
-  getPermissionsList(): Array<string>;
-  setPermissionsList(value: Array<string>): void;
-  addPermissions(value: string, index?: number): string;
-
+  getPermissionsMap(): jspb.Map<string, boolean>;
+  clearPermissionsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmbedAccessTokenRequest.AsObject;
   static toObject(includeInstance: boolean, msg: EmbedAccessTokenRequest): EmbedAccessTokenRequest.AsObject;
@@ -42,7 +39,7 @@ export namespace EmbedAccessTokenRequest {
     customerId: string,
     displayName: string,
     jwtCustomClaimsMap: Array<[string, string]>,
-    permissionsList: Array<string>,
+    permissionsMap: Array<[string, boolean]>,
   }
 
   export class Filter extends jspb.Message {

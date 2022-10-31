@@ -87,7 +87,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.embedaccesstoken.EmbedAccessTokenRequest.repeatedFields_ = [1,5];
+proto.embedaccesstoken.EmbedAccessTokenRequest.repeatedFields_ = [1];
 
 
 
@@ -125,7 +125,7 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.toObject = function(includeInstan
     customerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     jwtCustomClaimsMap: (f = msg.getJwtCustomClaimsMap()) ? f.toObject(includeInstance, undefined) : [],
-    permissionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    permissionsMap: (f = msg.getPermissionsMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -182,8 +182,10 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.deserializeBinaryFromReader = fun
          });
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addPermissions(value);
+      var value = msg.getPermissionsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readBool, null, "", false);
+         });
       break;
     default:
       reader.skipField();
@@ -240,12 +242,9 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.serializeBinaryToWriter = functio
   if (f && f.getLength() > 0) {
     f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getPermissionsList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      5,
-      f
-    );
+  f = message.getPermissionsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeBool);
   }
 };
 
@@ -573,40 +572,25 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearJwtCustomClaimsMap
 
 
 /**
- * repeated string permissions = 5;
- * @return {!Array<string>}
+ * map<string, bool> permissions = 5;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,boolean>}
  */
-proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.getPermissionsList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.getPermissionsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,boolean>} */ (
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      null));
 };
 
 
 /**
- * @param {!Array<string>} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
  */
-proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.setPermissionsList = function(value) {
-  return jspb.Message.setField(this, 5, value || []);
-};
-
-
-/**
- * @param {string} value
- * @param {number=} opt_index
- * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
- */
-proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.addPermissions = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
- */
-proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearPermissionsList = function() {
-  return this.setPermissionsList([]);
-};
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearPermissionsMap = function() {
+  this.getPermissionsMap().clear();
+  return this;};
 
 
 

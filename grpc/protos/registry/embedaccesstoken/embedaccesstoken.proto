@@ -31,7 +31,7 @@ message EmbedAccessTokenRequest {
     // jwt_custom_claims is the custom claims associated with the access token.
     map<string, string> jwt_custom_claims = 4;
     // permissions is the permissions associated with the access token.
-    repeated string permissions = 5;
+    map<string, bool> permissions = 5;
 }
 
 // EmbedAccessTokenResponse is the response message for the Get rpc.
