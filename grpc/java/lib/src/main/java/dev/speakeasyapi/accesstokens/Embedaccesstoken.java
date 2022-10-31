@@ -19,28 +19,203 @@ public final class Embedaccesstoken {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     java.util.List<dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter> 
         getFiltersList();
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter getFilters(int index);
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     int getFiltersCount();
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     java.util.List<? extends dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.FilterOrBuilder> 
         getFiltersOrBuilderList();
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.FilterOrBuilder getFiltersOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * customer_id is the customer id associated with the access token.
+     * </pre>
+     *
+     * <code>optional string customer_id = 2;</code>
+     * @return Whether the customerId field is set.
+     */
+    boolean hasCustomerId();
+    /**
+     * <pre>
+     * customer_id is the customer id associated with the access token.
+     * </pre>
+     *
+     * <code>optional string customer_id = 2;</code>
+     * @return The customerId.
+     */
+    java.lang.String getCustomerId();
+    /**
+     * <pre>
+     * customer_id is the customer id associated with the access token.
+     * </pre>
+     *
+     * <code>optional string customer_id = 2;</code>
+     * @return The bytes for customerId.
+     */
+    com.google.protobuf.ByteString
+        getCustomerIdBytes();
+
+    /**
+     * <pre>
+     * display_name is the display name associated with the access token.
+     * </pre>
+     *
+     * <code>optional string display_name = 3;</code>
+     * @return Whether the displayName field is set.
+     */
+    boolean hasDisplayName();
+    /**
+     * <pre>
+     * display_name is the display name associated with the access token.
+     * </pre>
+     *
+     * <code>optional string display_name = 3;</code>
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     * <pre>
+     * display_name is the display name associated with the access token.
+     * </pre>
+     *
+     * <code>optional string display_name = 3;</code>
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString
+        getDisplayNameBytes();
+
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+    int getJwtCustomClaimsCount();
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+    boolean containsJwtCustomClaims(
+        java.lang.String key);
+    /**
+     * Use {@link #getJwtCustomClaimsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getJwtCustomClaims();
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getJwtCustomClaimsMap();
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+
+    /* nullable */
+java.lang.String getJwtCustomClaimsOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue);
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+
+    java.lang.String getJwtCustomClaimsOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @return A list containing the permissions.
+     */
+    java.util.List<java.lang.String>
+        getPermissionsList();
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @return The count of permissions.
+     */
+    int getPermissionsCount();
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @param index The index of the element to return.
+     * @return The permissions at the given index.
+     */
+    java.lang.String getPermissions(int index);
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the permissions at the given index.
+     */
+    com.google.protobuf.ByteString
+        getPermissionsBytes(int index);
   }
   /**
    * <pre>
@@ -60,6 +235,9 @@ public final class Embedaccesstoken {
     }
     private EmbedAccessTokenRequest() {
       filters_ = java.util.Collections.emptyList();
+      customerId_ = "";
+      displayName_ = "";
+      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -102,6 +280,40 @@ public final class Embedaccesstoken {
                   input.readMessage(dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.parser(), extensionRegistry));
               break;
             }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000001;
+              customerId_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000002;
+              displayName_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                jwtCustomClaims_ = com.google.protobuf.MapField.newMapField(
+                    JwtCustomClaimsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              jwtCustomClaims__ = input.readMessage(
+                  JwtCustomClaimsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              jwtCustomClaims_.getMutableMap().put(
+                  jwtCustomClaims__.getKey(), jwtCustomClaims__.getValue());
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                permissions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              permissions_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -122,6 +334,9 @@ public final class Embedaccesstoken {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           filters_ = java.util.Collections.unmodifiableList(filters_);
         }
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          permissions_ = permissions_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -131,6 +346,18 @@ public final class Embedaccesstoken {
       return dev.speakeasyapi.accesstokens.Embedaccesstoken.internal_static_embedaccesstoken_EmbedAccessTokenRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetJwtCustomClaims();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -144,11 +371,19 @@ public final class Embedaccesstoken {
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       * <pre>
+       * key is the key of the filter.
+       * </pre>
+       *
        * <code>string key = 1;</code>
        * @return The key.
        */
       java.lang.String getKey();
       /**
+       * <pre>
+       * key is the key of the filter.
+       * </pre>
+       *
        * <code>string key = 1;</code>
        * @return The bytes for key.
        */
@@ -156,11 +391,19 @@ public final class Embedaccesstoken {
           getKeyBytes();
 
       /**
+       * <pre>
+       * operator is the operator of the filter.
+       * </pre>
+       *
        * <code>string operator = 2;</code>
        * @return The operator.
        */
       java.lang.String getOperator();
       /**
+       * <pre>
+       * operator is the operator of the filter.
+       * </pre>
+       *
        * <code>string operator = 2;</code>
        * @return The bytes for operator.
        */
@@ -168,11 +411,19 @@ public final class Embedaccesstoken {
           getOperatorBytes();
 
       /**
+       * <pre>
+       * value is the value of the filter.
+       * </pre>
+       *
        * <code>string value = 3;</code>
        * @return The value.
        */
       java.lang.String getValue();
       /**
+       * <pre>
+       * value is the value of the filter.
+       * </pre>
+       *
        * <code>string value = 3;</code>
        * @return The bytes for value.
        */
@@ -180,6 +431,10 @@ public final class Embedaccesstoken {
           getValueBytes();
     }
     /**
+     * <pre>
+     * Filter represents a filter to be applied to the request.
+     * </pre>
+     *
      * Protobuf type {@code embedaccesstoken.EmbedAccessTokenRequest.Filter}
      */
     public static final class Filter extends
@@ -282,6 +537,10 @@ public final class Embedaccesstoken {
       public static final int KEY_FIELD_NUMBER = 1;
       private volatile java.lang.Object key_;
       /**
+       * <pre>
+       * key is the key of the filter.
+       * </pre>
+       *
        * <code>string key = 1;</code>
        * @return The key.
        */
@@ -299,6 +558,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * key is the key of the filter.
+       * </pre>
+       *
        * <code>string key = 1;</code>
        * @return The bytes for key.
        */
@@ -320,6 +583,10 @@ public final class Embedaccesstoken {
       public static final int OPERATOR_FIELD_NUMBER = 2;
       private volatile java.lang.Object operator_;
       /**
+       * <pre>
+       * operator is the operator of the filter.
+       * </pre>
+       *
        * <code>string operator = 2;</code>
        * @return The operator.
        */
@@ -337,6 +604,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * operator is the operator of the filter.
+       * </pre>
+       *
        * <code>string operator = 2;</code>
        * @return The bytes for operator.
        */
@@ -358,6 +629,10 @@ public final class Embedaccesstoken {
       public static final int VALUE_FIELD_NUMBER = 3;
       private volatile java.lang.Object value_;
       /**
+       * <pre>
+       * value is the value of the filter.
+       * </pre>
+       *
        * <code>string value = 3;</code>
        * @return The value.
        */
@@ -375,6 +650,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * value is the value of the filter.
+       * </pre>
+       *
        * <code>string value = 3;</code>
        * @return The bytes for value.
        */
@@ -568,6 +847,10 @@ public final class Embedaccesstoken {
         return builder;
       }
       /**
+       * <pre>
+       * Filter represents a filter to be applied to the request.
+       * </pre>
+       *
        * Protobuf type {@code embedaccesstoken.EmbedAccessTokenRequest.Filter}
        */
       public static final class Builder extends
@@ -731,6 +1014,10 @@ public final class Embedaccesstoken {
 
         private java.lang.Object key_ = "";
         /**
+         * <pre>
+         * key is the key of the filter.
+         * </pre>
+         *
          * <code>string key = 1;</code>
          * @return The key.
          */
@@ -747,6 +1034,10 @@ public final class Embedaccesstoken {
           }
         }
         /**
+         * <pre>
+         * key is the key of the filter.
+         * </pre>
+         *
          * <code>string key = 1;</code>
          * @return The bytes for key.
          */
@@ -764,6 +1055,10 @@ public final class Embedaccesstoken {
           }
         }
         /**
+         * <pre>
+         * key is the key of the filter.
+         * </pre>
+         *
          * <code>string key = 1;</code>
          * @param value The key to set.
          * @return This builder for chaining.
@@ -779,6 +1074,10 @@ public final class Embedaccesstoken {
           return this;
         }
         /**
+         * <pre>
+         * key is the key of the filter.
+         * </pre>
+         *
          * <code>string key = 1;</code>
          * @return This builder for chaining.
          */
@@ -789,6 +1088,10 @@ public final class Embedaccesstoken {
           return this;
         }
         /**
+         * <pre>
+         * key is the key of the filter.
+         * </pre>
+         *
          * <code>string key = 1;</code>
          * @param value The bytes for key to set.
          * @return This builder for chaining.
@@ -807,6 +1110,10 @@ public final class Embedaccesstoken {
 
         private java.lang.Object operator_ = "";
         /**
+         * <pre>
+         * operator is the operator of the filter.
+         * </pre>
+         *
          * <code>string operator = 2;</code>
          * @return The operator.
          */
@@ -823,6 +1130,10 @@ public final class Embedaccesstoken {
           }
         }
         /**
+         * <pre>
+         * operator is the operator of the filter.
+         * </pre>
+         *
          * <code>string operator = 2;</code>
          * @return The bytes for operator.
          */
@@ -840,6 +1151,10 @@ public final class Embedaccesstoken {
           }
         }
         /**
+         * <pre>
+         * operator is the operator of the filter.
+         * </pre>
+         *
          * <code>string operator = 2;</code>
          * @param value The operator to set.
          * @return This builder for chaining.
@@ -855,6 +1170,10 @@ public final class Embedaccesstoken {
           return this;
         }
         /**
+         * <pre>
+         * operator is the operator of the filter.
+         * </pre>
+         *
          * <code>string operator = 2;</code>
          * @return This builder for chaining.
          */
@@ -865,6 +1184,10 @@ public final class Embedaccesstoken {
           return this;
         }
         /**
+         * <pre>
+         * operator is the operator of the filter.
+         * </pre>
+         *
          * <code>string operator = 2;</code>
          * @param value The bytes for operator to set.
          * @return This builder for chaining.
@@ -883,6 +1206,10 @@ public final class Embedaccesstoken {
 
         private java.lang.Object value_ = "";
         /**
+         * <pre>
+         * value is the value of the filter.
+         * </pre>
+         *
          * <code>string value = 3;</code>
          * @return The value.
          */
@@ -899,6 +1226,10 @@ public final class Embedaccesstoken {
           }
         }
         /**
+         * <pre>
+         * value is the value of the filter.
+         * </pre>
+         *
          * <code>string value = 3;</code>
          * @return The bytes for value.
          */
@@ -916,6 +1247,10 @@ public final class Embedaccesstoken {
           }
         }
         /**
+         * <pre>
+         * value is the value of the filter.
+         * </pre>
+         *
          * <code>string value = 3;</code>
          * @param value The value to set.
          * @return This builder for chaining.
@@ -931,6 +1266,10 @@ public final class Embedaccesstoken {
           return this;
         }
         /**
+         * <pre>
+         * value is the value of the filter.
+         * </pre>
+         *
          * <code>string value = 3;</code>
          * @return This builder for chaining.
          */
@@ -941,6 +1280,10 @@ public final class Embedaccesstoken {
           return this;
         }
         /**
+         * <pre>
+         * value is the value of the filter.
+         * </pre>
+         *
          * <code>string value = 3;</code>
          * @param value The bytes for value to set.
          * @return This builder for chaining.
@@ -1009,9 +1352,14 @@ public final class Embedaccesstoken {
 
     }
 
+    private int bitField0_;
     public static final int FILTERS_FIELD_NUMBER = 1;
     private java.util.List<dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter> filters_;
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     @java.lang.Override
@@ -1019,6 +1367,10 @@ public final class Embedaccesstoken {
       return filters_;
     }
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     @java.lang.Override
@@ -1027,6 +1379,10 @@ public final class Embedaccesstoken {
       return filters_;
     }
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     @java.lang.Override
@@ -1034,6 +1390,10 @@ public final class Embedaccesstoken {
       return filters_.size();
     }
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     @java.lang.Override
@@ -1041,12 +1401,280 @@ public final class Embedaccesstoken {
       return filters_.get(index);
     }
     /**
+     * <pre>
+     * filters is the list of filters to apply to the request.
+     * </pre>
+     *
      * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
      */
     @java.lang.Override
     public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.FilterOrBuilder getFiltersOrBuilder(
         int index) {
       return filters_.get(index);
+    }
+
+    public static final int CUSTOMER_ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object customerId_;
+    /**
+     * <pre>
+     * customer_id is the customer id associated with the access token.
+     * </pre>
+     *
+     * <code>optional string customer_id = 2;</code>
+     * @return Whether the customerId field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomerId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * customer_id is the customer id associated with the access token.
+     * </pre>
+     *
+     * <code>optional string customer_id = 2;</code>
+     * @return The customerId.
+     */
+    @java.lang.Override
+    public java.lang.String getCustomerId() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * customer_id is the customer id associated with the access token.
+     * </pre>
+     *
+     * <code>optional string customer_id = 2;</code>
+     * @return The bytes for customerId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCustomerIdBytes() {
+      java.lang.Object ref = customerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        customerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object displayName_;
+    /**
+     * <pre>
+     * display_name is the display name associated with the access token.
+     * </pre>
+     *
+     * <code>optional string display_name = 3;</code>
+     * @return Whether the displayName field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * display_name is the display name associated with the access token.
+     * </pre>
+     *
+     * <code>optional string display_name = 3;</code>
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * display_name is the display name associated with the access token.
+     * </pre>
+     *
+     * <code>optional string display_name = 3;</code>
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int JWT_CUSTOM_CLAIMS_FIELD_NUMBER = 4;
+    private static final class JwtCustomClaimsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  dev.speakeasyapi.accesstokens.Embedaccesstoken.internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> jwtCustomClaims_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetJwtCustomClaims() {
+      if (jwtCustomClaims_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            JwtCustomClaimsDefaultEntryHolder.defaultEntry);
+      }
+      return jwtCustomClaims_;
+    }
+
+    public int getJwtCustomClaimsCount() {
+      return internalGetJwtCustomClaims().getMap().size();
+    }
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsJwtCustomClaims(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetJwtCustomClaims().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getJwtCustomClaimsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getJwtCustomClaims() {
+      return getJwtCustomClaimsMap();
+    }
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getJwtCustomClaimsMap() {
+      return internalGetJwtCustomClaims().getMap();
+    }
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getJwtCustomClaimsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetJwtCustomClaims().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * jwt_custom_claims is the custom claims associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getJwtCustomClaimsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetJwtCustomClaims().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int PERMISSIONS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList permissions_;
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @return A list containing the permissions.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPermissionsList() {
+      return permissions_;
+    }
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @return The count of permissions.
+     */
+    public int getPermissionsCount() {
+      return permissions_.size();
+    }
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @param index The index of the element to return.
+     * @return The permissions at the given index.
+     */
+    public java.lang.String getPermissions(int index) {
+      return permissions_.get(index);
+    }
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>repeated string permissions = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the permissions at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getPermissionsBytes(int index) {
+      return permissions_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1066,6 +1694,21 @@ public final class Embedaccesstoken {
       for (int i = 0; i < filters_.size(); i++) {
         output.writeMessage(1, filters_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, customerId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetJwtCustomClaims(),
+          JwtCustomClaimsDefaultEntryHolder.defaultEntry,
+          4);
+      for (int i = 0; i < permissions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, permissions_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -1078,6 +1721,30 @@ public final class Embedaccesstoken {
       for (int i = 0; i < filters_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, filters_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, customerId_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetJwtCustomClaims().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        jwtCustomClaims__ = JwtCustomClaimsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, jwtCustomClaims__);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < permissions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(permissions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPermissionsList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1096,6 +1763,20 @@ public final class Embedaccesstoken {
 
       if (!getFiltersList()
           .equals(other.getFiltersList())) return false;
+      if (hasCustomerId() != other.hasCustomerId()) return false;
+      if (hasCustomerId()) {
+        if (!getCustomerId()
+            .equals(other.getCustomerId())) return false;
+      }
+      if (hasDisplayName() != other.hasDisplayName()) return false;
+      if (hasDisplayName()) {
+        if (!getDisplayName()
+            .equals(other.getDisplayName())) return false;
+      }
+      if (!internalGetJwtCustomClaims().equals(
+          other.internalGetJwtCustomClaims())) return false;
+      if (!getPermissionsList()
+          .equals(other.getPermissionsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1110,6 +1791,22 @@ public final class Embedaccesstoken {
       if (getFiltersCount() > 0) {
         hash = (37 * hash) + FILTERS_FIELD_NUMBER;
         hash = (53 * hash) + getFiltersList().hashCode();
+      }
+      if (hasCustomerId()) {
+        hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomerId().hashCode();
+      }
+      if (hasDisplayName()) {
+        hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDisplayName().hashCode();
+      }
+      if (!internalGetJwtCustomClaims().getMap().isEmpty()) {
+        hash = (37 * hash) + JWT_CUSTOM_CLAIMS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetJwtCustomClaims().hashCode();
+      }
+      if (getPermissionsCount() > 0) {
+        hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getPermissionsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1222,6 +1919,28 @@ public final class Embedaccesstoken {
         return dev.speakeasyapi.accesstokens.Embedaccesstoken.internal_static_embedaccesstoken_EmbedAccessTokenRequest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetJwtCustomClaims();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableJwtCustomClaims();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -1255,6 +1974,13 @@ public final class Embedaccesstoken {
         } else {
           filtersBuilder_.clear();
         }
+        customerId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        displayName_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        internalGetMutableJwtCustomClaims().clear();
+        permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -1282,6 +2008,7 @@ public final class Embedaccesstoken {
       public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest buildPartial() {
         dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest result = new dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest(this);
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (filtersBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             filters_ = java.util.Collections.unmodifiableList(filters_);
@@ -1291,6 +2018,22 @@ public final class Embedaccesstoken {
         } else {
           result.filters_ = filtersBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.customerId_ = customerId_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.displayName_ = displayName_;
+        result.jwtCustomClaims_ = internalGetJwtCustomClaims();
+        result.jwtCustomClaims_.makeImmutable();
+        if (((bitField0_ & 0x00000010) != 0)) {
+          permissions_ = permissions_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.permissions_ = permissions_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -1365,6 +2108,28 @@ public final class Embedaccesstoken {
             }
           }
         }
+        if (other.hasCustomerId()) {
+          bitField0_ |= 0x00000002;
+          customerId_ = other.customerId_;
+          onChanged();
+        }
+        if (other.hasDisplayName()) {
+          bitField0_ |= 0x00000004;
+          displayName_ = other.displayName_;
+          onChanged();
+        }
+        internalGetMutableJwtCustomClaims().mergeFrom(
+            other.internalGetJwtCustomClaims());
+        if (!other.permissions_.isEmpty()) {
+          if (permissions_.isEmpty()) {
+            permissions_ = other.permissions_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensurePermissionsIsMutable();
+            permissions_.addAll(other.permissions_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1408,6 +2173,10 @@ public final class Embedaccesstoken {
           dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter, dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.Builder, dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.FilterOrBuilder> filtersBuilder_;
 
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public java.util.List<dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter> getFiltersList() {
@@ -1418,6 +2187,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public int getFiltersCount() {
@@ -1428,6 +2201,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter getFilters(int index) {
@@ -1438,6 +2215,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder setFilters(
@@ -1455,6 +2236,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder setFilters(
@@ -1469,6 +2254,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder addFilters(dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter value) {
@@ -1485,6 +2274,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder addFilters(
@@ -1502,6 +2295,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder addFilters(
@@ -1516,6 +2313,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder addFilters(
@@ -1530,6 +2331,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder addAllFilters(
@@ -1545,6 +2350,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder clearFilters() {
@@ -1558,6 +2367,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public Builder removeFilters(int index) {
@@ -1571,6 +2384,10 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.Builder getFiltersBuilder(
@@ -1578,6 +2395,10 @@ public final class Embedaccesstoken {
         return getFiltersFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.FilterOrBuilder getFiltersOrBuilder(
@@ -1588,6 +2409,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public java.util.List<? extends dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.FilterOrBuilder> 
@@ -1599,6 +2424,10 @@ public final class Embedaccesstoken {
         }
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.Builder addFiltersBuilder() {
@@ -1606,6 +2435,10 @@ public final class Embedaccesstoken {
             dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.getDefaultInstance());
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.Builder addFiltersBuilder(
@@ -1614,6 +2447,10 @@ public final class Embedaccesstoken {
             index, dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.getDefaultInstance());
       }
       /**
+       * <pre>
+       * filters is the list of filters to apply to the request.
+       * </pre>
+       *
        * <code>repeated .embedaccesstoken.EmbedAccessTokenRequest.Filter filters = 1;</code>
        */
       public java.util.List<dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenRequest.Filter.Builder> 
@@ -1633,6 +2470,525 @@ public final class Embedaccesstoken {
           filters_ = null;
         }
         return filtersBuilder_;
+      }
+
+      private java.lang.Object customerId_ = "";
+      /**
+       * <pre>
+       * customer_id is the customer id associated with the access token.
+       * </pre>
+       *
+       * <code>optional string customer_id = 2;</code>
+       * @return Whether the customerId field is set.
+       */
+      public boolean hasCustomerId() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       * customer_id is the customer id associated with the access token.
+       * </pre>
+       *
+       * <code>optional string customer_id = 2;</code>
+       * @return The customerId.
+       */
+      public java.lang.String getCustomerId() {
+        java.lang.Object ref = customerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          customerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * customer_id is the customer id associated with the access token.
+       * </pre>
+       *
+       * <code>optional string customer_id = 2;</code>
+       * @return The bytes for customerId.
+       */
+      public com.google.protobuf.ByteString
+          getCustomerIdBytes() {
+        java.lang.Object ref = customerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          customerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * customer_id is the customer id associated with the access token.
+       * </pre>
+       *
+       * <code>optional string customer_id = 2;</code>
+       * @param value The customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * customer_id is the customer id associated with the access token.
+       * </pre>
+       *
+       * <code>optional string customer_id = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCustomerId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        customerId_ = getDefaultInstance().getCustomerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * customer_id is the customer id associated with the access token.
+       * </pre>
+       *
+       * <code>optional string customer_id = 2;</code>
+       * @param value The bytes for customerId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCustomerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        bitField0_ |= 0x00000002;
+        customerId_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       * <pre>
+       * display_name is the display name associated with the access token.
+       * </pre>
+       *
+       * <code>optional string display_name = 3;</code>
+       * @return Whether the displayName field is set.
+       */
+      public boolean hasDisplayName() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <pre>
+       * display_name is the display name associated with the access token.
+       * </pre>
+       *
+       * <code>optional string display_name = 3;</code>
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * display_name is the display name associated with the access token.
+       * </pre>
+       *
+       * <code>optional string display_name = 3;</code>
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString
+          getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * display_name is the display name associated with the access token.
+       * </pre>
+       *
+       * <code>optional string display_name = 3;</code>
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * display_name is the display name associated with the access token.
+       * </pre>
+       *
+       * <code>optional string display_name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * display_name is the display name associated with the access token.
+       * </pre>
+       *
+       * <code>optional string display_name = 3;</code>
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        bitField0_ |= 0x00000004;
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> jwtCustomClaims_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetJwtCustomClaims() {
+        if (jwtCustomClaims_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              JwtCustomClaimsDefaultEntryHolder.defaultEntry);
+        }
+        return jwtCustomClaims_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableJwtCustomClaims() {
+        onChanged();;
+        if (jwtCustomClaims_ == null) {
+          jwtCustomClaims_ = com.google.protobuf.MapField.newMapField(
+              JwtCustomClaimsDefaultEntryHolder.defaultEntry);
+        }
+        if (!jwtCustomClaims_.isMutable()) {
+          jwtCustomClaims_ = jwtCustomClaims_.copy();
+        }
+        return jwtCustomClaims_;
+      }
+
+      public int getJwtCustomClaimsCount() {
+        return internalGetJwtCustomClaims().getMap().size();
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsJwtCustomClaims(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetJwtCustomClaims().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getJwtCustomClaimsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getJwtCustomClaims() {
+        return getJwtCustomClaimsMap();
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getJwtCustomClaimsMap() {
+        return internalGetJwtCustomClaims().getMap();
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getJwtCustomClaimsOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetJwtCustomClaims().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getJwtCustomClaimsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetJwtCustomClaims().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearJwtCustomClaims() {
+        internalGetMutableJwtCustomClaims().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+
+      public Builder removeJwtCustomClaims(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableJwtCustomClaims().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableJwtCustomClaims() {
+        return internalGetMutableJwtCustomClaims().getMutableMap();
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+      public Builder putJwtCustomClaims(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+        internalGetMutableJwtCustomClaims().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * jwt_custom_claims is the custom claims associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; jwt_custom_claims = 4;</code>
+       */
+
+      public Builder putAllJwtCustomClaims(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableJwtCustomClaims().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensurePermissionsIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @return A list containing the permissions.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPermissionsList() {
+        return permissions_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @return The count of permissions.
+       */
+      public int getPermissionsCount() {
+        return permissions_.size();
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @param index The index of the element to return.
+       * @return The permissions at the given index.
+       */
+      public java.lang.String getPermissions(int index) {
+        return permissions_.get(index);
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the permissions at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getPermissionsBytes(int index) {
+        return permissions_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The permissions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPermissions(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePermissionsIsMutable();
+        permissions_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @param value The permissions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermissions(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensurePermissionsIsMutable();
+        permissions_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @param values The permissions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllPermissions(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePermissionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, permissions_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPermissions() {
+        permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>repeated string permissions = 5;</code>
+       * @param value The bytes of the permissions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPermissionsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensurePermissionsIsMutable();
+        permissions_.add(value);
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1692,12 +3048,20 @@ public final class Embedaccesstoken {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string accessToken = 1;</code>
+     * <pre>
+     * access_token is a token that allows access to an embed.
+     * </pre>
+     *
+     * <code>string access_token = 1;</code>
      * @return The accessToken.
      */
     java.lang.String getAccessToken();
     /**
-     * <code>string accessToken = 1;</code>
+     * <pre>
+     * access_token is a token that allows access to an embed.
+     * </pre>
+     *
+     * <code>string access_token = 1;</code>
      * @return The bytes for accessToken.
      */
     com.google.protobuf.ByteString
@@ -1793,10 +3157,14 @@ public final class Embedaccesstoken {
               dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenResponse.class, dev.speakeasyapi.accesstokens.Embedaccesstoken.EmbedAccessTokenResponse.Builder.class);
     }
 
-    public static final int ACCESSTOKEN_FIELD_NUMBER = 1;
+    public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
     private volatile java.lang.Object accessToken_;
     /**
-     * <code>string accessToken = 1;</code>
+     * <pre>
+     * access_token is a token that allows access to an embed.
+     * </pre>
+     *
+     * <code>string access_token = 1;</code>
      * @return The accessToken.
      */
     @java.lang.Override
@@ -1813,7 +3181,11 @@ public final class Embedaccesstoken {
       }
     }
     /**
-     * <code>string accessToken = 1;</code>
+     * <pre>
+     * access_token is a token that allows access to an embed.
+     * </pre>
+     *
+     * <code>string access_token = 1;</code>
      * @return The bytes for accessToken.
      */
     @java.lang.Override
@@ -1888,7 +3260,7 @@ public final class Embedaccesstoken {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ACCESSTOKEN_FIELD_NUMBER;
+      hash = (37 * hash) + ACCESS_TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getAccessToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2139,7 +3511,11 @@ public final class Embedaccesstoken {
 
       private java.lang.Object accessToken_ = "";
       /**
-       * <code>string accessToken = 1;</code>
+       * <pre>
+       * access_token is a token that allows access to an embed.
+       * </pre>
+       *
+       * <code>string access_token = 1;</code>
        * @return The accessToken.
        */
       public java.lang.String getAccessToken() {
@@ -2155,7 +3531,11 @@ public final class Embedaccesstoken {
         }
       }
       /**
-       * <code>string accessToken = 1;</code>
+       * <pre>
+       * access_token is a token that allows access to an embed.
+       * </pre>
+       *
+       * <code>string access_token = 1;</code>
        * @return The bytes for accessToken.
        */
       public com.google.protobuf.ByteString
@@ -2172,7 +3552,11 @@ public final class Embedaccesstoken {
         }
       }
       /**
-       * <code>string accessToken = 1;</code>
+       * <pre>
+       * access_token is a token that allows access to an embed.
+       * </pre>
+       *
+       * <code>string access_token = 1;</code>
        * @param value The accessToken to set.
        * @return This builder for chaining.
        */
@@ -2187,7 +3571,11 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
-       * <code>string accessToken = 1;</code>
+       * <pre>
+       * access_token is a token that allows access to an embed.
+       * </pre>
+       *
+       * <code>string access_token = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearAccessToken() {
@@ -2197,7 +3585,11 @@ public final class Embedaccesstoken {
         return this;
       }
       /**
-       * <code>string accessToken = 1;</code>
+       * <pre>
+       * access_token is a token that allows access to an embed.
+       * </pre>
+       *
+       * <code>string access_token = 1;</code>
        * @param value The bytes for accessToken to set.
        * @return This builder for chaining.
        */
@@ -2276,6 +3668,11 @@ public final class Embedaccesstoken {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_embedaccesstoken_EmbedAccessTokenRequest_Filter_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_embedaccesstoken_EmbedAccessTokenResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -2290,18 +3687,25 @@ public final class Embedaccesstoken {
   static {
     java.lang.String[] descriptorData = {
       "\n0registry/embedaccesstoken/embedaccesst" +
-      "oken.proto\022\020embedaccesstoken\"\224\001\n\027EmbedAc" +
+      "oken.proto\022\020embedaccesstoken\"\222\003\n\027EmbedAc" +
       "cessTokenRequest\022A\n\007filters\030\001 \003(\01320.embe" +
       "daccesstoken.EmbedAccessTokenRequest.Fil" +
-      "ter\0326\n\006Filter\022\013\n\003key\030\001 \001(\t\022\020\n\010operator\030\002" +
-      " \001(\t\022\r\n\005value\030\003 \001(\t\"/\n\030EmbedAccessTokenR" +
-      "esponse\022\023\n\013accessToken\030\001 \001(\t2y\n\027EmbedAcc" +
-      "essTokenService\022^\n\003Get\022).embedaccesstoke" +
-      "n.EmbedAccessTokenRequest\032*.embedaccesst" +
-      "oken.EmbedAccessTokenResponse\"\000Bm\n\035dev.s" +
-      "peakeasyapi.accesstokensZLgithub.com/spe" +
-      "akeasy-api/speakeasy-schemas/grpc/go/reg" +
-      "istry/embedaccesstokenb\006proto3"
+      "ter\022\030\n\013customer_id\030\002 \001(\tH\000\210\001\001\022\031\n\014display" +
+      "_name\030\003 \001(\tH\001\210\001\001\022Y\n\021jwt_custom_claims\030\004 " +
+      "\003(\0132>.embedaccesstoken.EmbedAccessTokenR" +
+      "equest.JwtCustomClaimsEntry\022\023\n\013permissio" +
+      "ns\030\005 \003(\t\0326\n\006Filter\022\013\n\003key\030\001 \001(\t\022\020\n\010opera" +
+      "tor\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\0326\n\024JwtCustomCla" +
+      "imsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "B\016\n\014_customer_idB\017\n\r_display_name\"0\n\030Emb" +
+      "edAccessTokenResponse\022\024\n\014access_token\030\001 " +
+      "\001(\t2y\n\027EmbedAccessTokenService\022^\n\003Get\022)." +
+      "embedaccesstoken.EmbedAccessTokenRequest" +
+      "\032*.embedaccesstoken.EmbedAccessTokenResp" +
+      "onse\"\000Bm\n\035dev.speakeasyapi.accesstokensZ" +
+      "Lgithub.com/speakeasy-api/speakeasy-sche" +
+      "mas/grpc/go/registry/embedaccesstokenb\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2312,13 +3716,19 @@ public final class Embedaccesstoken {
     internal_static_embedaccesstoken_EmbedAccessTokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_embedaccesstoken_EmbedAccessTokenRequest_descriptor,
-        new java.lang.String[] { "Filters", });
+        new java.lang.String[] { "Filters", "CustomerId", "DisplayName", "JwtCustomClaims", "Permissions", "CustomerId", "DisplayName", });
     internal_static_embedaccesstoken_EmbedAccessTokenRequest_Filter_descriptor =
       internal_static_embedaccesstoken_EmbedAccessTokenRequest_descriptor.getNestedTypes().get(0);
     internal_static_embedaccesstoken_EmbedAccessTokenRequest_Filter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_embedaccesstoken_EmbedAccessTokenRequest_Filter_descriptor,
         new java.lang.String[] { "Key", "Operator", "Value", });
+    internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_descriptor =
+      internal_static_embedaccesstoken_EmbedAccessTokenRequest_descriptor.getNestedTypes().get(1);
+    internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_embedaccesstoken_EmbedAccessTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_embedaccesstoken_EmbedAccessTokenResponse_fieldAccessorTable = new

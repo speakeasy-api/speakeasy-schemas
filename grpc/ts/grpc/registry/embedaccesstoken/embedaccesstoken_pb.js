@@ -87,7 +87,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.embedaccesstoken.EmbedAccessTokenRequest.repeatedFields_ = [1];
+proto.embedaccesstoken.EmbedAccessTokenRequest.repeatedFields_ = [1,5];
 
 
 
@@ -121,7 +121,11 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.toObject = function(opt
 proto.embedaccesstoken.EmbedAccessTokenRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
-    proto.embedaccesstoken.EmbedAccessTokenRequest.Filter.toObject, includeInstance)
+    proto.embedaccesstoken.EmbedAccessTokenRequest.Filter.toObject, includeInstance),
+    customerId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    displayName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    jwtCustomClaimsMap: (f = msg.getJwtCustomClaimsMap()) ? f.toObject(includeInstance, undefined) : [],
+    permissionsList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -163,6 +167,24 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.deserializeBinaryFromReader = fun
       reader.readMessage(value,proto.embedaccesstoken.EmbedAccessTokenRequest.Filter.deserializeBinaryFromReader);
       msg.addFilters(value);
       break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCustomerId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDisplayName(value);
+      break;
+    case 4:
+      var value = msg.getJwtCustomClaimsMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addPermissions(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -198,6 +220,31 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.serializeBinaryToWriter = functio
       1,
       f,
       proto.embedaccesstoken.EmbedAccessTokenRequest.Filter.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getJwtCustomClaimsMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = message.getPermissionsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      5,
+      f
     );
   }
 };
@@ -431,6 +478,137 @@ proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearFiltersList = func
 };
 
 
+/**
+ * optional string customer_id = 2;
+ * @return {string}
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.getCustomerId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.setCustomerId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearCustomerId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.hasCustomerId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string display_name = 3;
+ * @return {string}
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.getDisplayName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.setDisplayName = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearDisplayName = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.hasDisplayName = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * map<string, string> jwt_custom_claims = 4;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.getJwtCustomClaimsMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 4, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearJwtCustomClaimsMap = function() {
+  this.getJwtCustomClaimsMap().clear();
+  return this;};
+
+
+/**
+ * repeated string permissions = 5;
+ * @return {!Array<string>}
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.getPermissionsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.setPermissionsList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.addPermissions = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.embedaccesstoken.EmbedAccessTokenRequest} returns this
+ */
+proto.embedaccesstoken.EmbedAccessTokenRequest.prototype.clearPermissionsList = function() {
+  return this.setPermissionsList([]);
+};
+
+
 
 
 
@@ -463,7 +641,7 @@ proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.toObject = function(op
  */
 proto.embedaccesstoken.EmbedAccessTokenResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    accesstoken: jspb.Message.getFieldWithDefault(msg, 1, "")
+    accessToken: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -502,7 +680,7 @@ proto.embedaccesstoken.EmbedAccessTokenResponse.deserializeBinaryFromReader = fu
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAccesstoken(value);
+      msg.setAccessToken(value);
       break;
     default:
       reader.skipField();
@@ -533,7 +711,7 @@ proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.serializeBinary = func
  */
 proto.embedaccesstoken.EmbedAccessTokenResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getAccesstoken();
+  f = message.getAccessToken();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -544,10 +722,10 @@ proto.embedaccesstoken.EmbedAccessTokenResponse.serializeBinaryToWriter = functi
 
 
 /**
- * optional string accessToken = 1;
+ * optional string access_token = 1;
  * @return {string}
  */
-proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.getAccesstoken = function() {
+proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.getAccessToken = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -556,7 +734,7 @@ proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.getAccesstoken = funct
  * @param {string} value
  * @return {!proto.embedaccesstoken.EmbedAccessTokenResponse} returns this
  */
-proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.setAccesstoken = function(value) {
+proto.embedaccesstoken.EmbedAccessTokenResponse.prototype.setAccessToken = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

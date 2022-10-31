@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EmbedAccessTokenServiceClient interface {
-	// Get is the rpc handling access token retrieval from the SDK
+	//  Get is the rpc handling access token retrieval from the SDK
 	Get(ctx context.Context, in *EmbedAccessTokenRequest, opts ...grpc.CallOption) (*EmbedAccessTokenResponse, error)
 }
 
@@ -47,7 +47,7 @@ func (c *embedAccessTokenServiceClient) Get(ctx context.Context, in *EmbedAccess
 // All implementations must embed UnimplementedEmbedAccessTokenServiceServer
 // for forward compatibility
 type EmbedAccessTokenServiceServer interface {
-	// Get is the rpc handling access token retrieval from the SDK
+	//  Get is the rpc handling access token retrieval from the SDK
 	Get(context.Context, *EmbedAccessTokenRequest) (*EmbedAccessTokenResponse, error)
 	mustEmbedUnimplementedEmbedAccessTokenServiceServer()
 }
