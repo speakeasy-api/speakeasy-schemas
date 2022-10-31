@@ -181,18 +181,7 @@ java.lang.String defaultValue);
      * permissions is the permissions associated with the access token.
      * </pre>
      *
-     * <code>repeated string permissions = 5;</code>
-     * @return A list containing the permissions.
-     */
-    java.util.List<java.lang.String>
-        getPermissionsList();
-    /**
-     * <pre>
-     * permissions is the permissions associated with the access token.
-     * </pre>
-     *
-     * <code>repeated string permissions = 5;</code>
-     * @return The count of permissions.
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
      */
     int getPermissionsCount();
     /**
@@ -200,22 +189,46 @@ java.lang.String defaultValue);
      * permissions is the permissions associated with the access token.
      * </pre>
      *
-     * <code>repeated string permissions = 5;</code>
-     * @param index The index of the element to return.
-     * @return The permissions at the given index.
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
      */
-    java.lang.String getPermissions(int index);
+    boolean containsPermissions(
+        java.lang.String key);
+    /**
+     * Use {@link #getPermissionsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Boolean>
+    getPermissions();
     /**
      * <pre>
      * permissions is the permissions associated with the access token.
      * </pre>
      *
-     * <code>repeated string permissions = 5;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the permissions at the given index.
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
      */
-    com.google.protobuf.ByteString
-        getPermissionsBytes(int index);
+    java.util.Map<java.lang.String, java.lang.Boolean>
+    getPermissionsMap();
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
+     */
+
+    boolean getPermissionsOrDefault(
+        java.lang.String key,
+        boolean defaultValue);
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
+     */
+
+    boolean getPermissionsOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -237,7 +250,6 @@ java.lang.String defaultValue);
       filters_ = java.util.Collections.emptyList();
       customerId_ = "";
       displayName_ = "";
-      permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -306,12 +318,16 @@ java.lang.String defaultValue);
               break;
             }
             case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                permissions_ = new com.google.protobuf.LazyStringArrayList();
+                permissions_ = com.google.protobuf.MapField.newMapField(
+                    PermissionsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000010;
               }
-              permissions_.add(s);
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
+              permissions__ = input.readMessage(
+                  PermissionsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              permissions_.getMutableMap().put(
+                  permissions__.getKey(), permissions__.getValue());
               break;
             }
             default: {
@@ -334,9 +350,6 @@ java.lang.String defaultValue);
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
           filters_ = java.util.Collections.unmodifiableList(filters_);
         }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          permissions_ = permissions_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -353,6 +366,8 @@ java.lang.String defaultValue);
       switch (number) {
         case 4:
           return internalGetJwtCustomClaims();
+        case 5:
+          return internalGetPermissions();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -1627,54 +1642,100 @@ java.lang.String defaultValue);
     }
 
     public static final int PERMISSIONS_FIELD_NUMBER = 5;
-    private com.google.protobuf.LazyStringList permissions_;
-    /**
-     * <pre>
-     * permissions is the permissions associated with the access token.
-     * </pre>
-     *
-     * <code>repeated string permissions = 5;</code>
-     * @return A list containing the permissions.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getPermissionsList() {
+    private static final class PermissionsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Boolean> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Boolean>newDefaultInstance(
+                  dev.speakeasyapi.accesstokens.Embedaccesstoken.internal_static_embedaccesstoken_EmbedAccessTokenRequest_PermissionsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.BOOL,
+                  false);
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Boolean> permissions_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+    internalGetPermissions() {
+      if (permissions_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            PermissionsDefaultEntryHolder.defaultEntry);
+      }
       return permissions_;
     }
-    /**
-     * <pre>
-     * permissions is the permissions associated with the access token.
-     * </pre>
-     *
-     * <code>repeated string permissions = 5;</code>
-     * @return The count of permissions.
-     */
+
     public int getPermissionsCount() {
-      return permissions_.size();
+      return internalGetPermissions().getMap().size();
     }
     /**
      * <pre>
      * permissions is the permissions associated with the access token.
      * </pre>
      *
-     * <code>repeated string permissions = 5;</code>
-     * @param index The index of the element to return.
-     * @return The permissions at the given index.
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
      */
-    public java.lang.String getPermissions(int index) {
-      return permissions_.get(index);
+
+    @java.lang.Override
+    public boolean containsPermissions(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetPermissions().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getPermissionsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Boolean> getPermissions() {
+      return getPermissionsMap();
     }
     /**
      * <pre>
      * permissions is the permissions associated with the access token.
      * </pre>
      *
-     * <code>repeated string permissions = 5;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the permissions at the given index.
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getPermissionsBytes(int index) {
-      return permissions_.getByteString(index);
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.Boolean> getPermissionsMap() {
+      return internalGetPermissions().getMap();
+    }
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
+     */
+    @java.lang.Override
+
+    public boolean getPermissionsOrDefault(
+        java.lang.String key,
+        boolean defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Boolean> map =
+          internalGetPermissions().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * permissions is the permissions associated with the access token.
+     * </pre>
+     *
+     * <code>map&lt;string, bool&gt; permissions = 5;</code>
+     */
+    @java.lang.Override
+
+    public boolean getPermissionsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Boolean> map =
+          internalGetPermissions().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1706,9 +1767,12 @@ java.lang.String defaultValue);
           internalGetJwtCustomClaims(),
           JwtCustomClaimsDefaultEntryHolder.defaultEntry,
           4);
-      for (int i = 0; i < permissions_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, permissions_.getRaw(i));
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetPermissions(),
+          PermissionsDefaultEntryHolder.defaultEntry,
+          5);
       unknownFields.writeTo(output);
     }
 
@@ -1738,13 +1802,15 @@ java.lang.String defaultValue);
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, jwtCustomClaims__);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < permissions_.size(); i++) {
-          dataSize += computeStringSizeNoTag(permissions_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getPermissionsList().size();
+      for (java.util.Map.Entry<java.lang.String, java.lang.Boolean> entry
+           : internalGetPermissions().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
+        permissions__ = PermissionsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(5, permissions__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1775,8 +1841,8 @@ java.lang.String defaultValue);
       }
       if (!internalGetJwtCustomClaims().equals(
           other.internalGetJwtCustomClaims())) return false;
-      if (!getPermissionsList()
-          .equals(other.getPermissionsList())) return false;
+      if (!internalGetPermissions().equals(
+          other.internalGetPermissions())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1804,9 +1870,9 @@ java.lang.String defaultValue);
         hash = (37 * hash) + JWT_CUSTOM_CLAIMS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetJwtCustomClaims().hashCode();
       }
-      if (getPermissionsCount() > 0) {
+      if (!internalGetPermissions().getMap().isEmpty()) {
         hash = (37 * hash) + PERMISSIONS_FIELD_NUMBER;
-        hash = (53 * hash) + getPermissionsList().hashCode();
+        hash = (53 * hash) + internalGetPermissions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1925,6 +1991,8 @@ java.lang.String defaultValue);
         switch (number) {
           case 4:
             return internalGetJwtCustomClaims();
+          case 5:
+            return internalGetPermissions();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1936,6 +2004,8 @@ java.lang.String defaultValue);
         switch (number) {
           case 4:
             return internalGetMutableJwtCustomClaims();
+          case 5:
+            return internalGetMutablePermissions();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1979,8 +2049,7 @@ java.lang.String defaultValue);
         displayName_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableJwtCustomClaims().clear();
-        permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
+        internalGetMutablePermissions().clear();
         return this;
       }
 
@@ -2028,11 +2097,8 @@ java.lang.String defaultValue);
         result.displayName_ = displayName_;
         result.jwtCustomClaims_ = internalGetJwtCustomClaims();
         result.jwtCustomClaims_.makeImmutable();
-        if (((bitField0_ & 0x00000010) != 0)) {
-          permissions_ = permissions_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000010);
-        }
-        result.permissions_ = permissions_;
+        result.permissions_ = internalGetPermissions();
+        result.permissions_.makeImmutable();
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2120,16 +2186,8 @@ java.lang.String defaultValue);
         }
         internalGetMutableJwtCustomClaims().mergeFrom(
             other.internalGetJwtCustomClaims());
-        if (!other.permissions_.isEmpty()) {
-          if (permissions_.isEmpty()) {
-            permissions_ = other.permissions_;
-            bitField0_ = (bitField0_ & ~0x00000010);
-          } else {
-            ensurePermissionsIsMutable();
-            permissions_.addAll(other.permissions_);
-          }
-          onChanged();
-        }
+        internalGetMutablePermissions().mergeFrom(
+            other.internalGetPermissions());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2845,129 +2903,106 @@ java.lang.String defaultValue);
         return this;
       }
 
-      private com.google.protobuf.LazyStringList permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensurePermissionsIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
-          permissions_ = new com.google.protobuf.LazyStringArrayList(permissions_);
-          bitField0_ |= 0x00000010;
-         }
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Boolean> permissions_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+      internalGetPermissions() {
+        if (permissions_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              PermissionsDefaultEntryHolder.defaultEntry);
+        }
+        return permissions_;
       }
-      /**
-       * <pre>
-       * permissions is the permissions associated with the access token.
-       * </pre>
-       *
-       * <code>repeated string permissions = 5;</code>
-       * @return A list containing the permissions.
-       */
-      public com.google.protobuf.ProtocolStringList
-          getPermissionsList() {
-        return permissions_.getUnmodifiableView();
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+      internalGetMutablePermissions() {
+        onChanged();;
+        if (permissions_ == null) {
+          permissions_ = com.google.protobuf.MapField.newMapField(
+              PermissionsDefaultEntryHolder.defaultEntry);
+        }
+        if (!permissions_.isMutable()) {
+          permissions_ = permissions_.copy();
+        }
+        return permissions_;
       }
-      /**
-       * <pre>
-       * permissions is the permissions associated with the access token.
-       * </pre>
-       *
-       * <code>repeated string permissions = 5;</code>
-       * @return The count of permissions.
-       */
+
       public int getPermissionsCount() {
-        return permissions_.size();
+        return internalGetPermissions().getMap().size();
       }
       /**
        * <pre>
        * permissions is the permissions associated with the access token.
        * </pre>
        *
-       * <code>repeated string permissions = 5;</code>
-       * @param index The index of the element to return.
-       * @return The permissions at the given index.
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
        */
-      public java.lang.String getPermissions(int index) {
-        return permissions_.get(index);
+
+      @java.lang.Override
+      public boolean containsPermissions(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetPermissions().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getPermissionsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Boolean> getPermissions() {
+        return getPermissionsMap();
       }
       /**
        * <pre>
        * permissions is the permissions associated with the access token.
        * </pre>
        *
-       * <code>repeated string permissions = 5;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the permissions at the given index.
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
        */
-      public com.google.protobuf.ByteString
-          getPermissionsBytes(int index) {
-        return permissions_.getByteString(index);
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.Boolean> getPermissionsMap() {
+        return internalGetPermissions().getMap();
       }
       /**
        * <pre>
        * permissions is the permissions associated with the access token.
        * </pre>
        *
-       * <code>repeated string permissions = 5;</code>
-       * @param index The index to set the value at.
-       * @param value The permissions to set.
-       * @return This builder for chaining.
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
        */
-      public Builder setPermissions(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePermissionsIsMutable();
-        permissions_.set(index, value);
-        onChanged();
-        return this;
+      @java.lang.Override
+
+      public boolean getPermissionsOrDefault(
+          java.lang.String key,
+          boolean defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Boolean> map =
+            internalGetPermissions().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
        * <pre>
        * permissions is the permissions associated with the access token.
        * </pre>
        *
-       * <code>repeated string permissions = 5;</code>
-       * @param value The permissions to add.
-       * @return This builder for chaining.
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
        */
-      public Builder addPermissions(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensurePermissionsIsMutable();
-        permissions_.add(value);
-        onChanged();
-        return this;
+      @java.lang.Override
+
+      public boolean getPermissionsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Boolean> map =
+            internalGetPermissions().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
       }
-      /**
-       * <pre>
-       * permissions is the permissions associated with the access token.
-       * </pre>
-       *
-       * <code>repeated string permissions = 5;</code>
-       * @param values The permissions to add.
-       * @return This builder for chaining.
-       */
-      public Builder addAllPermissions(
-          java.lang.Iterable<java.lang.String> values) {
-        ensurePermissionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, permissions_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * permissions is the permissions associated with the access token.
-       * </pre>
-       *
-       * <code>repeated string permissions = 5;</code>
-       * @return This builder for chaining.
-       */
+
       public Builder clearPermissions() {
-        permissions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
+        internalGetMutablePermissions().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -2975,19 +3010,52 @@ java.lang.String defaultValue);
        * permissions is the permissions associated with the access token.
        * </pre>
        *
-       * <code>repeated string permissions = 5;</code>
-       * @param value The bytes of the permissions to add.
-       * @return This builder for chaining.
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
        */
-      public Builder addPermissionsBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensurePermissionsIsMutable();
-        permissions_.add(value);
-        onChanged();
+
+      public Builder removePermissions(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutablePermissions().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Boolean>
+      getMutablePermissions() {
+        return internalGetMutablePermissions().getMutableMap();
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
+       */
+      public Builder putPermissions(
+          java.lang.String key,
+          boolean value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        
+        internalGetMutablePermissions().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * permissions is the permissions associated with the access token.
+       * </pre>
+       *
+       * <code>map&lt;string, bool&gt; permissions = 5;</code>
+       */
+
+      public Builder putAllPermissions(
+          java.util.Map<java.lang.String, java.lang.Boolean> values) {
+        internalGetMutablePermissions().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -3673,6 +3741,11 @@ java.lang.String defaultValue);
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_embedaccesstoken_EmbedAccessTokenRequest_PermissionsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_embedaccesstoken_EmbedAccessTokenRequest_PermissionsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_embedaccesstoken_EmbedAccessTokenResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -3687,25 +3760,27 @@ java.lang.String defaultValue);
   static {
     java.lang.String[] descriptorData = {
       "\n0registry/embedaccesstoken/embedaccesst" +
-      "oken.proto\022\020embedaccesstoken\"\222\003\n\027EmbedAc" +
+      "oken.proto\022\020embedaccesstoken\"\202\004\n\027EmbedAc" +
       "cessTokenRequest\022A\n\007filters\030\001 \003(\01320.embe" +
       "daccesstoken.EmbedAccessTokenRequest.Fil" +
       "ter\022\030\n\013customer_id\030\002 \001(\tH\000\210\001\001\022\031\n\014display" +
       "_name\030\003 \001(\tH\001\210\001\001\022Y\n\021jwt_custom_claims\030\004 " +
       "\003(\0132>.embedaccesstoken.EmbedAccessTokenR" +
-      "equest.JwtCustomClaimsEntry\022\023\n\013permissio" +
-      "ns\030\005 \003(\t\0326\n\006Filter\022\013\n\003key\030\001 \001(\t\022\020\n\010opera" +
-      "tor\030\002 \001(\t\022\r\n\005value\030\003 \001(\t\0326\n\024JwtCustomCla" +
-      "imsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
-      "B\016\n\014_customer_idB\017\n\r_display_name\"0\n\030Emb" +
-      "edAccessTokenResponse\022\024\n\014access_token\030\001 " +
-      "\001(\t2y\n\027EmbedAccessTokenService\022^\n\003Get\022)." +
-      "embedaccesstoken.EmbedAccessTokenRequest" +
-      "\032*.embedaccesstoken.EmbedAccessTokenResp" +
-      "onse\"\000Bm\n\035dev.speakeasyapi.accesstokensZ" +
-      "Lgithub.com/speakeasy-api/speakeasy-sche" +
-      "mas/grpc/go/registry/embedaccesstokenb\006p" +
-      "roto3"
+      "equest.JwtCustomClaimsEntry\022O\n\013permissio" +
+      "ns\030\005 \003(\0132:.embedaccesstoken.EmbedAccessT" +
+      "okenRequest.PermissionsEntry\0326\n\006Filter\022\013" +
+      "\n\003key\030\001 \001(\t\022\020\n\010operator\030\002 \001(\t\022\r\n\005value\030\003" +
+      " \001(\t\0326\n\024JwtCustomClaimsEntry\022\013\n\003key\030\001 \001(" +
+      "\t\022\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020PermissionsEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\010:\0028\001B\016\n\014_cus" +
+      "tomer_idB\017\n\r_display_name\"0\n\030EmbedAccess" +
+      "TokenResponse\022\024\n\014access_token\030\001 \001(\t2y\n\027E" +
+      "mbedAccessTokenService\022^\n\003Get\022).embedacc" +
+      "esstoken.EmbedAccessTokenRequest\032*.embed" +
+      "accesstoken.EmbedAccessTokenResponse\"\000Bm" +
+      "\n\035dev.speakeasyapi.accesstokensZLgithub." +
+      "com/speakeasy-api/speakeasy-schemas/grpc" +
+      "/go/registry/embedaccesstokenb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3728,6 +3803,12 @@ java.lang.String defaultValue);
     internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_embedaccesstoken_EmbedAccessTokenRequest_JwtCustomClaimsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_embedaccesstoken_EmbedAccessTokenRequest_PermissionsEntry_descriptor =
+      internal_static_embedaccesstoken_EmbedAccessTokenRequest_descriptor.getNestedTypes().get(2);
+    internal_static_embedaccesstoken_EmbedAccessTokenRequest_PermissionsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_embedaccesstoken_EmbedAccessTokenRequest_PermissionsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_embedaccesstoken_EmbedAccessTokenResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
