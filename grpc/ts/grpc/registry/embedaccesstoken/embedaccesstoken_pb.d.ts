@@ -9,6 +9,23 @@ export class EmbedAccessTokenRequest extends jspb.Message {
   setFiltersList(value: Array<EmbedAccessTokenRequest.Filter>): void;
   addFilters(value?: EmbedAccessTokenRequest.Filter, index?: number): EmbedAccessTokenRequest.Filter;
 
+  hasCustomerId(): boolean;
+  clearCustomerId(): void;
+  getCustomerId(): string;
+  setCustomerId(value: string): void;
+
+  hasDisplayName(): boolean;
+  clearDisplayName(): void;
+  getDisplayName(): string;
+  setDisplayName(value: string): void;
+
+  getJwtCustomClaimsMap(): jspb.Map<string, string>;
+  clearJwtCustomClaimsMap(): void;
+  clearPermissionsList(): void;
+  getPermissionsList(): Array<string>;
+  setPermissionsList(value: Array<string>): void;
+  addPermissions(value: string, index?: number): string;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmbedAccessTokenRequest.AsObject;
   static toObject(includeInstance: boolean, msg: EmbedAccessTokenRequest): EmbedAccessTokenRequest.AsObject;
@@ -22,6 +39,10 @@ export class EmbedAccessTokenRequest extends jspb.Message {
 export namespace EmbedAccessTokenRequest {
   export type AsObject = {
     filtersList: Array<EmbedAccessTokenRequest.Filter.AsObject>,
+    customerId: string,
+    displayName: string,
+    jwtCustomClaimsMap: Array<[string, string]>,
+    permissionsList: Array<string>,
   }
 
   export class Filter extends jspb.Message {
@@ -54,8 +75,8 @@ export namespace EmbedAccessTokenRequest {
 }
 
 export class EmbedAccessTokenResponse extends jspb.Message {
-  getAccesstoken(): string;
-  setAccesstoken(value: string): void;
+  getAccessToken(): string;
+  setAccessToken(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EmbedAccessTokenResponse.AsObject;
@@ -69,7 +90,7 @@ export class EmbedAccessTokenResponse extends jspb.Message {
 
 export namespace EmbedAccessTokenResponse {
   export type AsObject = {
-    accesstoken: string,
+    accessToken: string,
   }
 }
 

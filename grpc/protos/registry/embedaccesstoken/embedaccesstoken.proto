@@ -13,15 +13,29 @@ service EmbedAccessTokenService {
 
 // EmbedAccessTokenRequest is the request message for the Get rpc.
 message EmbedAccessTokenRequest {
+    // Filter represents a filter to be applied to the request.
     message Filter {
+        // key is the key of the filter.
         string key = 1;
+        // operator is the operator of the filter.
         string operator = 2;
+        // value is the value of the filter.
         string value = 3;
     }
+    // filters is the list of filters to apply to the request.
     repeated Filter filters = 1;
+    // customer_id is the customer id associated with the access token.
+    optional string customer_id = 2;
+    // display_name is the display name associated with the access token.
+    optional string display_name = 3;
+    // jwt_custom_claims is the custom claims associated with the access token.
+    map<string, string> jwt_custom_claims = 4;
+    // permissions is the permissions associated with the access token.
+    repeated string permissions = 5;
 }
 
 // EmbedAccessTokenResponse is the response message for the Get rpc.
 message EmbedAccessTokenResponse {
-    string accessToken = 1;
+    // access_token is a token that allows access to an embed.
+    string access_token = 1;
 }
