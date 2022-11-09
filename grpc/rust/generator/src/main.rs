@@ -6,10 +6,20 @@ use tonic_build03::configure;
 #[cfg(feature = "tokio")]
 use tonic_build::configure;
 
+#[cfg(feature = "tokio02")]
+fn out_dir() -> &'static str {
+    "../lib/src/tokio02"
+}
+
+#[cfg(feature = "tokio")]
+fn out_dir() -> &'static str {
+    "../lib/src/tokio"
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     configure()
         .build_server(false)
-        .out_dir(canonicalize("../lib/src")?)
+        .out_dir(canonicalize(out_dir())?)
         .compile(
             &[
                 canonicalize("../../protos/registry/embedaccesstoken/embedaccesstoken.proto")?,
