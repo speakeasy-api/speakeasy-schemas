@@ -1,5 +1,5 @@
 [package]
-description = "Proto definitions for the speakeasy Rust SDK"
+description = "Proto definitions for the speakeasy Rust SDK, you're probably looking for the speakeasy-rust-sdk package"
 documentation = "https://docs.rs/speakeasy-protos-tokio-latest"
 edition = "2021"
 homepage = "https://www.speakeasyapi.dev"
