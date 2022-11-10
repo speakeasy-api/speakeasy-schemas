@@ -8,12 +8,12 @@ use tonic_build::configure;
 
 #[cfg(feature = "tokio02")]
 fn out_dir() -> &'static str {
-    "../tokio02/src/"
+    "../speakeasy-protos-tokio-02/src/"
 }
 
 #[cfg(feature = "tokio")]
 fn out_dir() -> &'static str {
-    "../tokio/src/"
+    "../speakeasy-protos-tokio-latest/src/"
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
