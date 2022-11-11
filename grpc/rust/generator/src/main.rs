@@ -16,6 +16,31 @@ fn out_dir() -> &'static str {
     "../speakeasy-protos-tokio-latest/src/"
 }
 
+#[cfg(feature = "tokio02")]
+fn configure() -> tonic_build05::Builder {
+    tonic_build05::configure().build_client(false)
+}
+
+#[cfg(feature = "tokio")]
+fn configure() -> tonic_build::Builder {
+    tonic_build05::configure()
+}
+
+#[cfg(feature = "tokio02")]
+fn transform() {
+    transform_file("../speakeasy-protos-tokio-02/src/ingest.rs");
+    transform_file("../speakeasy-protos-tokio-02/src/embedaccesstoken.rs");
+}
+
+#[cfg(feature = "tokio02")]
+fn transform_file(file_path: &str) {
+    let file = std::fs::read_to_string(file_path).unwrap();
+
+    let transformed_file = file.replace("::prost::alloc", "::std");
+
+    std::fs::write(file_path, transformed_file).unwrap();
+}
+
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut config = Config::new();
 
@@ -33,16 +58,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             ],
             &[canonicalize("../../protos/registry")?],
         )?;
+
+    #[cfg(feature = "tokio02")]
+    transform();
+
     Ok(())
-}
-
-#[cfg(feature = "tokio02")]
-fn configure() -> tonic_build05::Builder {
-    tonic_build05::configure().build_client(false)
-}
-
-
-#[cfg(feature = "tokio")]
-fn configure() -> tonic_build::Builder {
-    tonic_build05::configure()
 }
