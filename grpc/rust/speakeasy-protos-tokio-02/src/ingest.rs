@@ -18,48 +18,67 @@ pub struct IngestRequest {
     pub customer_id: std::string::String,
     /// masking_metadata contains information about any masking added to the har.
     #[prost(message, optional, tag = "6")]
-    pub masking_metadata: ::std::option::Option<ingest_request::MaskingMetadata>,
+    pub masking_metadata: ::core::option::Option<ingest_request::MaskingMetadata>,
 }
+/// Nested message and enum types in `IngestRequest`.
 pub mod ingest_request {
     /// MaskingMetadata contains information about any masking added to the har.
     #[derive(Clone, PartialEq, ::prost::Message)]
     pub struct MaskingMetadata {
         /// request_header_masks contains a map of header keys to the masks applied to them.
         #[prost(map = "string, string", tag = "1")]
-        pub request_header_masks:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub request_header_masks: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// request_cookie_masks contains a map of cookie keys to the masks applied to them.
         #[prost(map = "string, string", tag = "2")]
-        pub request_cookie_masks:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub request_cookie_masks: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// request_field_masks_string contains a map of string body fields to the masks applied to them.
         #[prost(map = "string, string", tag = "3")]
-        pub request_field_masks_string:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub request_field_masks_string: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// request_field_masks_number contains a map of number body fields to the masks applied to them.
         #[prost(map = "string, string", tag = "4")]
-        pub request_field_masks_number:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub request_field_masks_number: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// response_header_masks contains a map of header keys to the masks applied to them.
         #[prost(map = "string, string", tag = "5")]
-        pub response_header_masks:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub response_header_masks: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// response_cookie_masks contains a map of cookie keys to the masks applied to them.
         #[prost(map = "string, string", tag = "6")]
-        pub response_cookie_masks:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub response_cookie_masks: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// response_field_masks_string contains a map of string body fields to the masks applied to them.
         #[prost(map = "string, string", tag = "7")]
-        pub response_field_masks_string:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub response_field_masks_string: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// response_field_masks_number contains a map of number body fields to the masks applied to them.
         #[prost(map = "string, string", tag = "8")]
-        pub response_field_masks_number:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub response_field_masks_number: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
         /// query_string_masks contains a map of query string keys to the masks applied to them.
         #[prost(map = "string, string", tag = "9")]
-        pub query_string_masks:
-            ::std::collections::HashMap<std::string::String, std::string::String>,
+        pub query_string_masks: ::std::collections::HashMap<
+            std::string::String,
+            std::string::String,
+        >,
     }
 }
 /// IngestResponse is the response message for the ingest rpc.
@@ -67,9 +86,10 @@ pub mod ingest_request {
 pub struct IngestResponse {}
 #[doc = r" Generated client implementations."]
 pub mod ingest_service_client {
-    #![allow(unused_variables, dead_code, missing_docs)]
+    #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     #[doc = " IngestService is the service definition for the registry ingest endpoint."]
+    #[derive(Debug, Clone)]
     pub struct IngestServiceClient<T> {
         inner: tonic::client::Grpc<T>,
     }
@@ -115,16 +135,6 @@ pub mod ingest_service_client {
             self.inner.unary(request.into_request(), path, codec).await
         }
     }
-    impl<T: Clone> Clone for IngestServiceClient<T> {
-        fn clone(&self) -> Self {
-            Self {
-                inner: self.inner.clone(),
-            }
-        }
-    }
-    impl<T> std::fmt::Debug for IngestServiceClient<T> {
-        fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-            write!(f, "IngestServiceClient {{ ... }}")
-        }
-    }
+
+ 
 }
