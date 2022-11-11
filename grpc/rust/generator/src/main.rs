@@ -23,7 +23,7 @@ fn configure() -> tonic_build05::Builder {
 
 #[cfg(feature = "tokio")]
 fn configure() -> tonic_build::Builder {
-    tonic_build05::configure()
+    tonic_build::configure()
 }
 
 #[cfg(feature = "tokio02")]
@@ -41,17 +41,24 @@ fn transform_file(file_path: &str) {
     std::fs::write(file_path, transformed_file).unwrap();
 }
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
+#[cfg(feature = "tokio02")]
+fn config() -> Config {
     let mut config = Config::new();
-
-    #[cfg(feature = "tokio02")]
     config.protoc_arg("--experimental_allow_proto3_optional");
+    config
+}
 
+#[cfg(feature = "tokio")]
+fn config() -> Config {
+    Config::new()
+}
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     configure()
         .build_server(false)
         .out_dir(canonicalize(out_dir())?)
         .compile_with_config(
-            config,
+            config(),
             &[
                 canonicalize("../../protos/registry/embedaccesstoken/embedaccesstoken.proto")?,
                 canonicalize("../../protos/registry/ingest/ingest.proto")?,
