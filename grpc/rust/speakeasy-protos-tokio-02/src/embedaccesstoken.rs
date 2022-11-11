@@ -43,9 +43,10 @@ pub struct EmbedAccessTokenResponse {
 }
 #[doc = r" Generated client implementations."]
 pub mod embed_access_token_service_client {
-    #![allow(unused_variables, dead_code, missing_docs)]
+    #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
     use tonic::codegen::*;
     #[doc = " EmbedAccessTokenService is the service definition for the registry embed-access-token endpoint."]
+    #[derive(Debug, Clone)]
     pub struct EmbedAccessTokenServiceClient<T> {
         inner: tonic::client::Grpc<T>,
     }
