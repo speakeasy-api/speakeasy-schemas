@@ -6,7 +6,7 @@ homepage = "https://www.speakeasyapi.dev"
 license-file = "LICENSE"
 name = "speakeasy-protos-tokio-latest"
 repository = "https://github.com/speakeasy-api/speakeasy-schemas"
-version = "0.1.0"
+version = "0.2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
