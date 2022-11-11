@@ -1,12 +1,8 @@
 use std::fs::canonicalize;
 
 #[cfg(feature = "tokio02")]
-use tonic_build05::configure;
-#[cfg(feature = "tokio02")]
 use prost_build08::Config;
 
-#[cfg(feature = "tokio")]
-use tonic_build::configure;
 #[cfg(feature = "tokio")]
 use prost_build::Config;
 
@@ -38,4 +34,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             &[canonicalize("../../protos/registry")?],
         )?;
     Ok(())
+}
+
+#[cfg(feature = "tokio02")]
+fn configure() -> tonic_build05::Builder {
+    tonic_build05::configure().build_client(false)
+}
+
+
+#[cfg(feature = "tokio")]
+fn configure() -> tonic_build::Builder {
+    tonic_build05::configure()
 }
