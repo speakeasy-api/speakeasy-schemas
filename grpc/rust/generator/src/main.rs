@@ -1,9 +1,9 @@
 use std::fs::canonicalize;
 
 #[cfg(feature = "tokio02")]
-use tonic_build03::configure;
+use tonic_build05::configure;
 #[cfg(feature = "tokio02")]
-use prost_build06::Config;
+use prost_build08::Config;
 
 #[cfg(feature = "tokio")]
 use tonic_build::configure;
