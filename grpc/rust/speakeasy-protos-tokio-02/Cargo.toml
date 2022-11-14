@@ -1,0 +1,16 @@
+[package]
+description = "Proto definitions for the speakeasy Rust SDK, you're probably looking for the speakeasy-rust-sdk package"
+documentation = "https://docs.rs/speakeasy-protos-tokio-02"
+edition = "2021"
+homepage = "https://www.speakeasyapi.dev"
+license-file = "LICENSE"
+name = "speakeasy-protos-tokio-02"
+repository = "https://github.com/speakeasy-api/speakeasy-schemas"
+version = "0.2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+prost = {version = "0.6"}
+tonic = {version = "0.3"}
+tower = {version = "0.3"}

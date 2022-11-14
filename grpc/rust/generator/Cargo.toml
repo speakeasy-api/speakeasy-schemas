@@ -4,6 +4,20 @@ name = "generator"
 version = "0.1.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+tokio = [
+  "dep:tonic-build",
+  "dep:prost-build",
+]
+
+tokio02 = [
+  "dep:tonic-build05",
+  "dep:prost-build08",
+]
 
 [dependencies]
-tonic-build = "0.3.1"
+prost-build = {version = "0.11", optional = true}
+tonic-build = {version = "0.8", optional = true}
+
+prost-build08 = {package = "prost-build", version = "0.8", optional = true}
+tonic-build05 = {package = "tonic-build", version = "0.5", optional = true}
