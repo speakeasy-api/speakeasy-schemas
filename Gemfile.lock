@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    grpc-tools (1.51.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  grpc-tools (~> 1.51)
+
+BUNDLED WITH
+   2.2.3
