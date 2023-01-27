@@ -52,6 +52,6 @@ pushd $JAVADIR
 gradle build
 popd
 
-# pushd $RUSTDIR
-# cargo run
-# popd
+pushd $RUSTDIR
+cargo run
+popd
